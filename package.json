@@ -1,0 +1,17 @@
+{
+  "name": "iwc2k22",
+  "version": "1.0.0",
+  "description": "Collaborative project based in github repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team 4 dev team",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.7"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
