@@ -1,0 +1,52 @@
+@use '../custom' as *;
+
+
+.footer {
+    padding-top: 1rem;
+    background-color: $warning;
+}
+
+
+
+// STYLE THE CAMPANY INFO CONTENT 
+.campany-list {
+    display: block;
+    list-style-type: none;
+    position: relative;
+
+    li {
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+
+        a {
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+// STYLE THE COPYRIGHT  CONTENT 
+.footer-bottom {
+    background-color: $black;
+
+    &__copyright {
+        color: $gray-600;
+        font-weight: 400;
+        
+
+        a {
+            color: $gray-300;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary;
+                text-decoration: underline;
+             
+            }
+        }
+    }
+}
