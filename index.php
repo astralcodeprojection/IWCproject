@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Sustain Jewelry Co.</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="">
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row text-center">
 
-                <h1 class="display-3 fw-bold">Hola</h1>
+                <h1 class="display-3 fw-bold">It Jewelry BB</h1>
                 <div class="heading-line mb-1"></div>
             </div>
             <br><br>
@@ -43,9 +43,9 @@
             </div>
         </div>
     </section>
-    <?php include("navfooter.php");?>
+    
 
 </body>
-
+<?php include("navfooter.php");?>
 
 </html>
