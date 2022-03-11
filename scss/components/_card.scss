@@ -1,0 +1,24 @@
+@use "../custom" as *;
+
+.cardComponent {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardComponent {
+    flex: 1 1 160px;
+    
+}
+
+.card {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-img-top {
+    max-width: 18rem;
+    max-height: 10rem;
+}

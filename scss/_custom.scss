@@ -1,0 +1,13 @@
+//THEME COLORS 
+$main: #f8f0e9;
+$accents: #151414;
+
+
+
+
+$primary:       $main;
+$secondary:     $accents;
+
+
+//BOOTSTRAP 5 IMPORT
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
