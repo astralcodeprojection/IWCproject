@@ -13,7 +13,35 @@
 
 <body class="">
     <?php include("nav.html");?>
-
+    <div class="container">
+        <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Bracelets</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Rings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Necklaces</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
     
     
 
