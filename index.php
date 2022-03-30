@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sustain Jewelry Co.</title>
+    <title>Sustain Jewelry Co. - Shop fashion using fine minerals including july birthstones.</title>
+    <meta name="description" content="Sustain Jewelry Company provides sustainable jewelry made to outlast fast fashion pieces using fine minerals and our sustainably sourced gemstones and pearls.">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -13,20 +17,7 @@
 
 <body class="">
     <?php include("nav.html");?>
-
-    <section id="home" class="homepage">
-        <div class="container">
-            <div class="row text-center">
-
-                <h1 class="display-3 fw-bold">It Jewelry BB</h1>
-                <div class="heading-line mb-1"></div>
-            </div>
-            <br><br>
-
-           
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
+    <div class="col-md-12">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -50,13 +41,20 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-md-1"></div>
+    <section id="home" class="homepage">
+        
+        <div class="container">
+            
+
+           
+            <div class="row">
+                
             </div>
-            <br><br> <br><br>
+            <br><br> 
             <h2 class="display-4 fw-bold">Current Collections</h2>
              <br><br>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
                         <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -64,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
                         <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -72,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
                         <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -80,11 +78,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Earrings</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <br><br>
+            
         </div>
         <br><br><br><br><br><br>
     </section>
     <br><br><br>
+    <div class="row">
+                <!-- needs work - ref this https://stackoverflow.com/questions/24705683/images-not-resized-based-on-bootstrap-column-size apply style
+                with SASS-->
+                <div class="col-md-6">
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="" alt="...">
+                        
+                </div>
+                <div class="col-md-6">
+                    <div >
+                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="" alt="...">
+                    
+                    </div>
+                </div>
+            </div>
     
     
 

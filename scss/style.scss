@@ -1,6 +1,7 @@
 //you can compile this with the command in terminal while in the project folder using sass scss:assets/css
 
 @use 'components/card';
+@use 'components/filter';
 
 @use 'sections/homepage';
 @use 'sections/navbar';

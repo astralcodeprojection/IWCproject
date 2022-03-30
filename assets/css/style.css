@@ -11140,6 +11140,32 @@ textarea.form-control-lg {
   max-height: 10rem;
 }
 
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none;
+  /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
 .homepage {
   padding: 10rem 0 0 0;
   width: 100%;
@@ -11151,20 +11177,20 @@ textarea.form-control-lg {
   background-color: #0a5a2e;
 }
 
-.campany-list {
+.company-list {
   display: block;
   list-style-type: none;
   position: relative;
 }
-.campany-list li {
+.company-list li {
   margin-bottom: 0.5rem;
   text-decoration: none;
 }
-.campany-list li a {
+.company-list li a {
   color: #fff;
   text-decoration: none;
 }
-.campany-list li a:hover {
+.company-list li a:hover {
   color: #ffffff;
 }
 
