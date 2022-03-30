@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 21, 2022 at 06:07 AM
+-- Generation Time: Mar 30, 2022 at 01:22 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -52,9 +52,10 @@ CREATE TABLE `products` (
   `productId` int(9) NOT NULL,
   `name` varchar(30) NOT NULL,
   `price` int(9) NOT NULL,
-  `category` int(50) NOT NULL,
-  `description` int(255) NOT NULL,
-  `img` varchar(255) NOT NULL
+  `category` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `keywords` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -124,7 +125,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productId` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `productId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
