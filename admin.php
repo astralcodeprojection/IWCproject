@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sustain Jewelry Co. - Shop fashion using fine minerals including july birthstones.</title>
+    <title>Admin - Sustain Jewelry Co.</title>
     <meta name="description" content="Sustain Jewelry Company provides sustainable jewelry made to outlast fast fashion pieces using fine minerals and our sustainably sourced gemstones and pearls.">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- JavaScript Bundle with Popper -->
