@@ -48,7 +48,7 @@ session_start();
                         $customers = $statement1->fetchAll();
                         $statement1->closeCursor();
                     }else{
-                        $error1= "Error finding tickets.";
+                        $error1= "Error finding cart.";
                     }
                 
                 
@@ -75,7 +75,7 @@ session_start();
                         <td><?php echo $c["userId"];?></td>
                         
                         <td>
-                            <form action="deletecartitem.php" method="post">
+                            <form action="xxxx.php" method="post">
                                 <input type="hidden" name="preId" value="<?php echo $c["preId"];?>">
                                 <button type="submit">Delete</button>
                             </form>
