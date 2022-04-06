@@ -14,14 +14,13 @@
 
 <body class="">
     <?php include("nav.html");?>
-
     <div id="wrapper">
         <! specify the encoding type of the form using the 
                 enctype attribute >
         <form action="upload.php" method="post" enctype="multipart/form-data">
             Select image to upload:
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+            <input type="submit" value="Upload Image" name="submit"> 
         </form>
 
     </div>
