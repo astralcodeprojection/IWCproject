@@ -41,17 +41,23 @@ session_start();
         
         <article class="left">
 
-            <form method="POST" action="lp4-process-update.php">
+            <form method="POST" action="orderUpdateProcessing.php">
                 <?php foreach($customers as $c) :?>
-                Name: <input type="text" name="name" required value="<?php echo $c["name"];?>">
-                <br><br>
-                Phone: <input type="tel" name="phone" required value="<?php echo $c["phone"];?>">
-                <br><br>
-                Address w/ City &amp; State: <input type="text" name="addr" required value="<?php echo $c["addr"];?>">
-                <br><br>
-                Email: <input type="email" name="email" required value="<?php echo $c["email"];?>">
-                <br><br>
-                <input type="hidden" name="customer_id" value="<?php echo $c["customer_id"];?>">
+                    First Name: <input type="text" name="firstName" required value="<?php echo $c["firstName"];?>">
+                    <br><br>
+                    Last Name: <input type="text" name="lastName" required value="<?php echo $c["lastName"];?>">
+                    <br><br>
+                    Email: <input type="email" name="email" required value="<?php echo $c["email"];?>">
+                    <br><br>
+                    Address: <input type="text" name="address" required value="<?php echo $c["address"];?>">
+                    <br><br>
+                    State: <input type="text" name="state" required value="<?php echo $c["state"];?>">
+                    <br><br>
+                    City: <input type="text" name="city" required value="<?php echo $c["city"];?>">
+                    <br><br>
+                    Total: <input type="text" name="total" required value="<?php echo $c["total"];?>">
+                    <br><br>
+                    <input type="hidden" name="orderId" value="<?php echo $c["orderId"];?>">
                 <?php endforeach;?>
                 <input type="submit" value="Submit">
                 

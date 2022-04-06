@@ -71,7 +71,7 @@
                     <td><?php echo $c["city"];?></td>
                     <td><?php echo $c["total"];?></td>
 
-                    <td><form action="" method="post">
+                    <td><form action="customerUpdate.php" method="post">
                             <input type="hidden" name="orderId" value="<?php echo $c["orderId"];?>">
                         <button type="submit">Update</button>
                         </form>
