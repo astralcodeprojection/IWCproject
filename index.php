@@ -25,10 +25,10 @@ session_start();
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="d-block w-100" alt="wood jewelry">
+                                <img src="img/mothers day sale.jpg" class="d-block w-100" alt="wood jewelry">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/two.jpg" class="d-block w-100" alt="filler">
+                                <img src="img/Easeter Sale.jpg" class="d-block w-100" alt="filler">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
