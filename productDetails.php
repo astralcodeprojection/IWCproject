@@ -1,8 +1,5 @@
 <?php
 session_start();
-if($_SESSION["logged_in"] != "true"){
-    
-    $userId = 99999;
 }
 
 ?>
@@ -41,18 +38,19 @@ if($_SESSION["logged_in"] != "true"){
                
                 <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $productId = $_POST["productId"];
+
                     if($_SESSION["logged_in"] = "true"){
-    
-                     $itemId = $_POST["itemId"];
+                        
                     }
 
                     require_once("connect-db.php");
                     $error = "";
                     
-                    $sql = "select * from product where itemId = :itemId";
+                    $sql = "select * from products where productId = :productId";
 
                     $statement1 = $db->prepare($sql);
-                    $statement1 -> bindValue(':itemId', $itemId);
+                    $statement1 -> bindValue(':productId', $productId);
                     
                     function test_input($data) {
                       $data = trim($data);
@@ -75,11 +73,31 @@ if($_SESSION["logged_in"] != "true"){
                     foreach($customers as $c){?>
                         
                         SKU (Item Id)
-                        <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
-                        <br>
-                        User Id (You)
-                        <input type="text" name="userId" value="<?php echo $_SESSION["userId"];?>"><br>
-                        <br>
+                        <input type="text" name="productId" value="<?php echo $c["productId"];?>">
+                        <br><br>
+                        user Id)
+                        <?php 
+                            if($_SESSION["logged_in"] != "true"){
+    
+                                echo "999999";
+                            }
+                            if($_SESSION["logged_in"] = "true"){
+
+                                echo $_SESSION["userId"];
+                            }
+                        
+                        ?>
+                        <input type="hidden" name="userId" value="<?php 
+                            if($_SESSION["logged_in"] != "true"){
+    
+                                echo "999999";
+                            }
+                            if($_SESSION["logged_in"] = "true"){
+
+                                echo $_SESSION["userId"];
+                            }
+                        ?>">
+                        <br><br>
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
                         <br><br>
@@ -90,10 +108,11 @@ if($_SESSION["logged_in"] != "true"){
                         <input type="text" name="qty" required>
                         <br><br>
                         Description:
-                        <input type="text" name="descr" value="<?php echo $c["descr"]?>" readonly>
-
+                        <input type="text" name="description" value="<?php echo $c["description"]?>" readonly>
                         <br><br>
-                        
+                        Category:
+                        <input type="text" name="category" value="<?php echo $c["category"];?>" readonly>
+                        <br><br>
                         
                         
                       <?php } ?>
@@ -106,11 +125,7 @@ if($_SESSION["logged_in"] != "true"){
             </div>
         </div>
         <div class="col-md-6">
-            <div class="bg-white p-4 text-start">
-            <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
-            </p>
-            </div>
+            
         </div>
       </div>
   </div>
