@@ -17,7 +17,77 @@ session_start();
 
 <body class="">
     <?php include("nav.html");?>
+     <article class="left">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                Email: <input type="email" name="email">
+                <br><br>
+                Username: <input type="text" name="username">
+                <br><br>
+                Password: <input type="password" name="password">
+                <br><br>
+                First Name: <input type="text" name="firstName">
+                <br><br>
+                Last Name: <input type="text" name="lastName">
+                <br><br>
+                Address: <input type="text" name="address">
+                <br><br>
+                State: <input type="text" name="state">
+                <br><br>
+                City: <input type="text" name="city">
+                <br><br>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </article>
+        <article>
+            <?php
 
+            require_once("connect-db.php");
+            $error = $success = $email = $username = $password = $firstName =  $lastName =  $address = $state =  $city = "";
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                $email = $_POST["email"];
+                $username = $_POST["username"];
+                $password = $_POST["password"];
+                $firstName = $_POST["firstName"];
+                $lastName = $_POST["lastName"];
+                $address = $_POST["address"];
+                $state = $_POST["state"];
+                $city = $_POST["city"];
+                
+                
+             $sql="insert into users (email, username, password, firstName, lastName, address, state, city) VALUES (:email, :username, :password, :firstName, :lastName, :address, :state, :city)";
+                
+                $statement1 = $db->prepare($sql);
+                
+                $statement1->bindValue(':email', $email);
+                $statement1->bindValue(':username', $username);
+                $statement1->bindValue(':password', $password);
+                $statement1->bindValue(':firstName', $firstName);
+                $statement1->bindValue(':lastName', $lastName);
+                $statement1->bindValue(':address', $address);
+                $statement1->bindValue(':state', $state);
+                $statement1->bindValue(':city', $city);
+                
+                if($statement1->execute()){
+                    $statement1->closeCursor();
+                    $success = "User successfully added.";
+                 }else{
+                    $error="Error entering user.";
+                };
+
+        
+        ?>
+            <?php
+                if($error !=""){
+                    echo "<h3>$error</h3>";
+                }else{
+                    echo "<h3>$success</h3>";
+                    
+                }
+                
+        }//end of post
+                ?>
+          
+        </article>
     
     
     

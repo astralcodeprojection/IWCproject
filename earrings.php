@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION["logged_in"] != "true"){
+    
+$userId = 99999;
+}
 ?>
 <!DOCTYPE html>
 <html>

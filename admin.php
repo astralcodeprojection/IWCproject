@@ -85,6 +85,57 @@
                    <?php } ?>            
             </table>
         </article>
+        <article class="">
+
+            <?php
+                require_once("connect-db.php");
+                $sql2 = "select * from products";
+                $statement2 = $db->prepare($sql2);
+                
+                if($statement2->execute()){
+                    $products=$statement2->fetchAll();
+                    $statement2->closeCursor();
+                }else{
+                    $error="Error finding orders.";
+                }
+            
+            ?>
+            <h3>Product List</h3>
+            <table>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Server Image</th>
+                    <th>Keywords</th>
+                </tr>
+                <?php
+                    foreach($products as $c){?>
+                <tr>
+                    <td><?php echo $c["productId"];?></td>
+                    <td><?php echo $c["name"];?></td>
+                    <td><?php echo $c["price"];?></td>
+                    <td><?php echo $c["category"];?></td>
+                    <td><?php echo $c["description"];?></td>
+                    <td><?php echo $c["img"];?></td>
+                    <td><?php echo $c["keywords"];?></td>
+
+                    <td><form action="productUpdate.php" method="post">
+                            <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">
+                        <button type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td><form action="productDelete.php" method="post">
+                            <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">
+                        <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>      
+                   <?php } ?>            
+            </table>
+        </article>
 
         </div>
         <div class="col-md-1">

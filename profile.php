@@ -1,5 +1,15 @@
 <?php
+// start the session
 session_start();
+if($_SESSION["logged_in"] != "true"){
+    
+?>
+<script>
+    window.location.replace("login.php");
+</script>
+<?php
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +30,7 @@ session_start();
 
     
     
-    
+    <h3>y e e t</h3>
 
 </body>
 <?php include("navfooter.php");?>

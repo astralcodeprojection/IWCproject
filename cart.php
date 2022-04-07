@@ -1,5 +1,8 @@
 <?php
+// start the session
 session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +41,7 @@ session_start();
                     require_once("connect-db.php");
                     $error1 = "";
 
-                    $sql = "select * from prepurchase WHERE userId = :userId";
+                    $sql = "select * from cart WHERE userId = :userId";
                 
                     $statement1 = $db->prepare($sql);
                     $statement1 -> bindValue(':userId' , $userId);
@@ -68,7 +71,7 @@ session_start();
                     <?php
                         foreach($customers as $c){?>
                     <tr>
-                        <td><?php echo $c["name"];?></td>
+                        <td><?php echo $c["n"];?></td>
                         <td><?php echo $c["price"]." $";?></td>
                         
                         <td><?php echo $c["qty"];?></td>

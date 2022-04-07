@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION["logged_in"] != "true"){
+    
+$userId = 99999;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,9 +59,13 @@ session_start();
                                                 <h5 class="card-title"><?php echo $c["name"];?></h5>
                                                 <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
                                                 <p class="card-text"><?php echo $c["description"];?></p>
-                                                <form action="addcart.php" method="post">
+                                                <form action="addToCart.php" method="post">
                                                     <input type="hidden" name="itemId" value="<?php echo $c["productId"];?>">
                                                     <button class="btn btn-primary" type="submit">Add to Cart</button>
+                                                </form>
+                                                <form action="productDetails.php" method="post">
+                                                    <input type="hidden" name="itemId" value="<?php echo $c["productId"];?>">
+                                                    <button class="btn btn-primary" type="submit">Details</button>
                                                 </form>
                                             </div>
                                         </div>
