@@ -10,6 +10,15 @@ session_start();
     <title>Sustain Jewelry Co. - Sustainable Fashion</title>
     <meta name="description" content="Sustain Jewelry Company provides sustainable jewelry using fine minerals and our sustainably sourced gemstones and pearls.">
     <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT1YS7DNDD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FT1YS7DNDD');
+    </script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -26,10 +35,7 @@ session_start();
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="img/mothers day sale.jpg" class="d-block w-100" alt="wood jewelry">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/Easeter Sale.jpg" class="d-block w-100" alt="filler">
-                            </div>
+                            </div> 
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,19 +98,18 @@ session_start();
         </div>
         <br><br><br><br><br><br>
     </section>
-    <br><br><br>
     <div class="row">
                 <!-- needs work - ref this https://stackoverflow.com/questions/24705683/images-not-resized-based-on-bootstrap-column-size apply style
                 with SASS-->
                 <div class="col-md-6">
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="" alt="...">
+                        <img src="img/image22-89.png" class="" alt="...">
                         
                 </div>
                 <div class="col-md-6">
-                    <div >
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="" alt="...">
                     
-                    </div>
+                        <img src="img/image4d-175.png" class="" alt="...">
+                    
+                    
                 </div>
             </div>
     
