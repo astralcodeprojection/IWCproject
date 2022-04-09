@@ -14,3 +14,8 @@ $warning: $brandcolourtwo;
 
 //BOOTSTRAP 5 IMPORT
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+
+:root {
+    --bs-body-font-family: 'Playfair Display', 'Roboto', serif;
+}
