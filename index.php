@@ -59,7 +59,7 @@ session_start();
             <br><br> 
             <h2 class="display-4 fw-bold">Current Collections</h2>
              <br><br>
-            <div class="row">
+            <div class="row cardComponent">
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
                         <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
@@ -96,24 +96,45 @@ session_start();
             <br><br>
             
         </div>
-        <br><br><br><br><br><br>
-    </section>
-    <div class="row">
-                <!-- needs work - ref this https://stackoverflow.com/questions/24705683/images-not-resized-based-on-bootstrap-column-size apply style
-                with SASS-->
+        <br><br><br><br>
+        <div class="container">
+            
+            
+            <div class="row">
                 <div class="col-md-6">
-                        <img src="img/image22-89.png" class="" alt="...">
-                        
+                    <div class="card bg-dark text-white">
+                        <img src="" class="card-img" alt="Sustain "/>
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                            This is a wider card with supporting text below as a natural lead-in to additional
+                            content. This content is a little bit longer.
+                            </p>
+                            <p class="card-text">Last updated 3 mins ago</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    
-                        <img src="img/image4d-175.png" class="" alt="...">
-                    
-                    
+                    <div class="card bg-dark text-white">
+                        <img src="" class="card-img" alt="Sustain "/>
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                            This is a wider card with supporting text below as a natural lead-in to additional
+                            content. This content is a little bit longer.
+                            </p>
+                            <p class="card-text">Last updated 3 mins ago</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <br><br>
+            
+        </div>
+    </section>
     
-    
+   
+            <br><br><br><br><br>
 
 </body>
 <?php include("navfooter.php");?>

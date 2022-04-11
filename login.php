@@ -47,6 +47,10 @@ session_start();
                 
                 <button type="submit" value="Submit">Submit</button>
             </form>
+            <button onclick="window.location.href='resetPassword.php'">
+                Forgot Password?
+            </button>
+
         </article>
         <?php
             require_once("connect-db.php");
@@ -91,10 +95,9 @@ session_start();
                             }
                         
         		?>
-            <script type="text/javascript">
-          
-               window.location.replace("account.php");
-            </script>
+                <script type="text/javascript">
+                    window.location = "account.php";
+                </script>
             <?php
                     }
                 

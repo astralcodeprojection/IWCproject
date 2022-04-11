@@ -32,7 +32,7 @@ $userId = 99999;
 <body class="">
     <?php include("nav.html");?>
     <div class="container">
-        <br><br><h2>Check out our !</h2><br>
+        <br><br><h2>Rings</h2><br>
        <div class="row">
           
            <div class="col-md-1"></div>

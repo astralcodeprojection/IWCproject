@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11119,30 +11120,42 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-:root {
-  --bs-body-font-family: "Playfair Display", "Roboto", serif;
+* h2, * .h2 {
+  font-family: "Playfair Display", serif;
 }
 
 .cardComponent {
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-}
-
-.cardComponent {
   flex: 1 1 160px;
 }
-
-.card {
+.cardComponent .card {
   border-radius: 5px;
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
 }
-
-.card-img-top {
+.cardComponent .card-img-top {
   max-width: 18rem;
   max-height: 10rem;
+}
+
+.mainCardComponent {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 160px;
+}
+.mainCardComponent .card {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.mainCardComponent .card-img-top {
+  max-width: auto;
+  max-height: auto;
 }
 
 /* Add padding BETWEEN each column */

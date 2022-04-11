@@ -1,13 +1,6 @@
 <?php
 // start the session
 session_start();
-if($_SESSION["logged_in"] != "true"){   
-?>
-<script>
-    window.location.replace("login.php");
-</script>
-<?php
-}
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +9,7 @@ if($_SESSION["logged_in"] != "true"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Account - Sustain Jewelry Co.</title>
+    <title>Reset Password - Sustain Jewelry Co.</title>
     <meta name="description" content="Create and manage your account for Sustain Jewelry, ethical and sustainable fashion">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -41,24 +34,24 @@ if($_SESSION["logged_in"] != "true"){
             <div class="col-md-1"></div>
             <div class="col-md-9"></div>
             <br>
-                <h2>Welcome <?php echo $_SESSION["firstName"];?> <?php echo $_SESSION["lastName"];?>!</h2>
+                <h2>Reset User Password</h2>
+                <form method="post" action="resetProcessing.php">
+                    <br><br>
+                    Username: <input type="text" name="username" required>
+                    <br><br>
+                    <h4>Security Question</h4>
+                    <br>
+                    What city do you live in: <input type="text" name="city" required>
+                    <br><br>
+
+                    
+                    <button type="submit" value="Submit">Submit</button>
+                </form>
             </div>
             <div class="col-md-2"></div>
             
         </div>
         <br><br><br>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <h2>Profile Management</h2>
-                <h2>Links:</h2>
-                <br>
-            </div>
-            <div class="col-md-6"></div>
-                
-            </div>
-            
-        </div>
     </div>
     
     
