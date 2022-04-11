@@ -11123,6 +11123,18 @@ textarea.form-control-lg {
 * h2, * .h2 {
   font-family: "Playfair Display", serif;
 }
+* .midPageSection {
+  background-color: #0a5a2e;
+}
+* .midPageSection h2, * .midPageSection .h2 {
+  font-size: 50pt;
+  color: white;
+}
+* .midPageSection h3, * .midPageSection .h3 {
+  font-size: 20pt;
+  font-weight: lighter;
+  color: white;
+}
 
 .cardComponent {
   flex-direction: row;
