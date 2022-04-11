@@ -11161,7 +11161,7 @@ textarea.form-control-lg {
 /* Add padding BETWEEN each column */
 .row,
 .row > .column {
-  padding: 8px;
+  padding: 7px;
 }
 
 /* Create three equal columns that floats next to each other */
