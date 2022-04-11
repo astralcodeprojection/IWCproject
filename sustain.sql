@@ -1,14 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 06, 2022 at 06:06 AM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Host: localhost
+-- Generation Time: Apr 09, 2022 at 11:49 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `sustain`
@@ -37,13 +44,7 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `orders` (
   `orderId` int(9) NOT NULL,
-  `userId` int(9) DEFAULT NULL,
-  `email` varchar(250) NOT NULL,
-  `firstName` varchar(250) NOT NULL,
-  `lastName` varchar(250) NOT NULL,
-  `address` varchar(250) NOT NULL,
-  `state` varchar(250) NOT NULL,
-  `city` varchar(250) NOT NULL,
+  `userId` int(9) NOT NULL,
   `total` decimal(10,2) NOT NULL,
   `payMethod` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -117,7 +118,23 @@ INSERT INTO `products` (`productId`, `name`, `price`, `category`, `description`,
 (52, 'Darling Single Hoop Earrings', '25.00', 'Earrings', 'Brass hung with brass ear wires. Pendants of gold will not let you down. These shimmering earrings will work with any outfit of the occasion.', 'img/darlinghoopearrings-2.png', 'brass gold pendants shimmering elegant fancy casual formal ecofriendly'),
 (53, 'Textured Flower Earrings', '21.00', 'Earrings', 'Brass is sourced from remelted metals. Embossed floral patterns are featured, perfect for everyday wear or casual wear.', 'img/flowerearrings.png', 'brass remelted embossed floral everyday casual formal elegant fancy ecofriendly'),
 (54, 'Beaded Mineral Earrings', '30.00', 'Earrings', 'Waxed hemp cord wrapped around sterling silver earrings featuring sustainably sourced mineral ore. Stones are polished into a nautral textured pattern. Simple and beautiful for any outfit.', 'img/beadedmineralearrings.png', 'wax hemp cord sterling silver sustainable mineral stones polished natural textured elegant fancy casual ecofriendly'),
-(55, 'Starlight Earrings', '30.00', 'Earrings', 'Beaded, crystal, brass, and copper material all in our fun starlight earrings. Perfect for casual wear or as a nice addition to more formal attire.', 'img/starlightearrings.png', 'beaded crystal brass copper starlight earrings casual formal fancy elegant ecofriendly colorful unique');
+(55, 'Starlight Earrings', '30.00', 'Earrings', 'Beaded, crystal, brass, and copper material all in our fun starlight earrings. Perfect for casual wear or as a nice addition to more formal attire.', 'img/starlightearrings.png', 'beaded crystal brass copper starlight earrings casual formal fancy elegant ecofriendly colorful unique'),
+(56, 'Hammered Steel Ring (Black Powder Coated Steel)', '26.99', 'Rings', 'A black hammered style ring crafted with quality and sustainability in mind.', 'img/blkhammersteelring.jpeg', 'black ring quality sustainability sustainable ecofriendly powder coat dark sleek '),
+(57, 'Hammered Steel Ring (Copper)', '26.99', 'Rings', 'A copper hammered style ring crafted with quality and sustainability in mind.', 'img/cophammersteelring.jpeg', 'copper ring quality sustainability sustainable ecofriendly light sleek '),
+(58, 'Silver Acid Etching Ring', '34.99', 'Rings', 'Acid etched high tempered steel made to last for generations. Slight indentations on the rings edges for style. ', 'img/silveracidring.jpeg', 'silver acid ring indentation stylish dark sleek steel etched durable ecofriendly sustainable'),
+(59, 'Natural Brass Ring', '29.99', 'Rings', 'A natural brass that was hand cut and polished using traditional methods. Choose this for a natural yet refined look.', 'img/naturalbrassring.jpeg', 'natural ecofriendly brass cut polished refined sleek bright eyecatching'),
+(60, 'Woven PET Bracelet', '13.99', 'Bracelets', 'A woven bracelet with a blued steel clasp using recycled PET plastics to create a stylish addition to daily wear.', 'img/wovenPETbracelet.jpeg', 'woven bracelet PET steel recycled ecofriendly sustainable plastic stylish daily black dark'),
+(61, 'Thin Vegan Leather Bracelet', '8.99', 'Bracelets', 'A thin vegan leather bracelet capped with resourced brass that works well with other accessories on a wrist or as a standalone feature.', 'img/veganleatherbracelet.jpeg', 'vegan leather bracelet thin brass standalone ecofriendly sustainable '),
+(62, 'Lava Stone Pull Bracelet', '14.99', 'Bracelets', 'A Lava Stone and rope construction featuring brass accents and stylings. Great for semi-formal occasions and casual wear.', 'img/lavastonepullbracelet.jpeg', 'lava stone pull bracelet formal casual ecofriendly sustainable black dark brass'),
+(63, 'Natural Mineral Bead Bracelet', '18.99', 'Bracelets', 'A vegan leather-bound bracelet featuring a blued steel clasp and mineral beads.', 'img/naturalmineralbeadbracelet.jpeg', 'natural mineral bead bracelet fancy vegan leather steel ecofriendly sustainable'),
+(64, 'Steel Micro Rope Necklace', '23.99', 'Necklaces', 'A skilfully crafted necklace featuring flush links that form a seamless pattern sure to impress. Stylish with most outfits and accessories. ', 'img/steelmicronecklace.jpeg', 'links pattern steel micro necklace formal casual ecofriendly sustainable'),
+(65, 'Rustic Steel Linked Necklace', '29.99', 'Necklaces', 'A rustic accented necklace based in traditional roman designs adapted for a modern time. Great for casual wear or for events. ', 'img/steellinkednecklace.jpeg', 'rustic accented steel linked necklace traditional roman modern casual formal ecofriendly sustainable'),
+(66, 'Rustic Amber Necklace', '24.99', 'Necklaces', 'Natural Carved Amber linked using a vegan leather rope insert. Perfect for casual occasions or any nature based activity. ', 'img/rusticambernecklace.jpeg', 'rustic amber necklace carved natural linked vegan leather rope casual nature ecofriendly sustainable'),
+(67, 'Tiger Eye Beaded Necklace', '17.99', 'Necklaces', 'A mesmerising polished tiger eye mineral necklace. Perfect for natural themed special occasions or casual wear around town. ', 'img/tigereyenecklace.jpeg', 'tiger eye necklace polished mineral natural themed formal casual ecofriendly sustainable'),
+(68, 'Dark Ebony Wood Studs', '6.99', 'Earrings', 'A buffed ebony wood sealed with our in house skin safe wood sealer built to last. Stylish for any occasions. ', 'img/darkebonywoodstuds.jpeg', 'buffed ebony wood sealed stylish formal casual dark sleek ecofriendly sustainble'),
+(69, 'Light Balsa Wood Studs', '6.59', 'Earrings', 'Natural Balsa wood studs built with stainless steel inserts. Wood is sealed with our in house wood sealer formulated to be skin safe. ', 'img/lightbalsawoodstuds.jpeg', 'natural balsa wood studs stainless steel sealed light casual formal ecofriendly sustainable'),
+(70, 'Brass Colored Stainless Steel Studs', '5.99', 'Earrings', 'A process tinted stainless steel pair of studs perfect for any formal events or casual interactions. ', 'img/brasscolouredstuds.jpeg', 'tinted stainless steel studs formal casual bright eyecatching ecofriendly sustainable'),
+(71, 'Black Textured Mineral Ore Earrings', '7.99', 'Earrings', 'Black metal frames with mineral ore disk inserts. Mineral ore is textured for a natural look perfect for casual wear.', 'img/blktexturedoreearrings.jpeg', 'black textured metal mineral ore disk natural elegant sleek dark ecofriendly sustainable');
 
 -- --------------------------------------------------------
 
@@ -135,14 +152,6 @@ CREATE TABLE `users` (
   `state` varchar(250) NOT NULL,
   `city` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`userId`, `email`, `password`, `firstName`, `lastName`, `address`, `state`, `city`) VALUES
-(1, 'd', 'd', 'd', 'd', 'd', 'd', 'd'),
-(3, 'c', 'c', 'c', 'c', 'c', 'c', 'c');
 
 --
 -- Indexes for dumped tables
@@ -188,16 +197,21 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=667;
+  MODIFY `orderId` int(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `productId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
