@@ -8,8 +8,8 @@
                 $sql = "update users set password = :password where userId = :userId";
                     
                 $statement1 = $db->prepare($sql);
-                $statement1->bindValue(':password' , $password);
-                $statement1->bindValue(':userId' , $userId);
+                $statement1->bindValue(':password', $password);
+                $statement1->bindValue(':userId', $userId);
 
                 
                 if($statement1->execute()){

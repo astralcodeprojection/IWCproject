@@ -1,3 +1,15 @@
+<?php
+// start the session
+session_start();
+if($_SESSION["admin_login"] != "true"){   
+?>
+<script>
+    window.location.replace("login.php");
+</script>
+<?php
+}
+
+?>
 <!DOCTYPE html>
 <html>
 

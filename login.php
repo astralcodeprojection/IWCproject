@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo $_SESSION["logged_in"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,13 +93,14 @@ session_start();
                                 if($v == $username && $v == $password){
                                     $_SESSION["logged_in"] = "true";
                                 }
-                            }
+                        
+                    }
                         
         		?>
                 <script type="text/javascript">
                     window.location = "account.php";
                 </script>
-            <?php
+                <?php
                     }
                 
                 }
