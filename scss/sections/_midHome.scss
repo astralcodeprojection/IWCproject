@@ -1,0 +1,9 @@
+@use "../custom"as *;
+
+.midPageSection {
+    background-color: $warning;
+
+    h2 {
+        font-size: 50pt;
+    }
+}

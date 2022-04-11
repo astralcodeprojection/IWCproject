@@ -97,39 +97,48 @@ session_start();
             
         </div>
         <br><br><br><br>
-        <div class="container">
-            
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card bg-dark text-white">
-                        <img src="" class="card-img" alt="Sustain "/>
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.
-                            </p>
-                            <p class="card-text">Last updated 3 mins ago</p>
-                        </div>
+        
+    </section>
+    <section id="midPageSection" class="midPageSection bg-warning">
+        <br>
+        <div class="row">
+            <h2 class="text-center">About Us</h2>
+            <div class="col-md-6">
+                <h3 class="text-center">Sustain is dedicated to</h3>
+                <h3 class="text-center">reaching the perfect</h3>
+                <h3 class="text-center">balance of price,</h3>
+                <h3 class="text-center">quality, and</h3>
+                <h3 class="text-center">sustainability.</h3>
+                <div class="row justify-content-sm-center">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-3">
+                        <a class="" href="">
+                            <button type="button"  class="btn btn-primary">Our Mission</button>
+                        </a>
                     </div>
+                    <div class="col-md-4"></div>
+                    
                 </div>
-                <div class="col-md-6">
-                    <div class="card bg-dark text-white">
-                        <img src="" class="card-img" alt="Sustain "/>
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.
-                            </p>
-                            <p class="card-text">Last updated 3 mins ago</p>
-                        </div>
+                
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Here you can learn</h3>
+                <h3 class="text-center">about where our</h3>
+                <h3 class="text-center">jewelry comes from</h3>
+                <h3 class="text-center">and how it is</h3>
+                <h3 class="text-center">manufactured from our</h3>
+                <h3 class="text-center">sustainable sources.</h3>
+                <div class="row justify-content-sm-center">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-3">
+                        <a class="" href="">
+                            <button type="button"  class="btn btn-primary">Our Mission</button>
+                        </a>
                     </div>
+                    <div class="col-md-4"></div>
+                    
                 </div>
             </div>
-            <br><br>
-            
         </div>
     </section>
     
