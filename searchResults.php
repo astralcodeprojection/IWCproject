@@ -1,9 +1,25 @@
 <?php
 session_start();
-if($_SESSION["logged_in"] != "true"){
-    
-$userId = 99999;
-}
+?>
+<?php
+    if($_SERVER["REQUEST_METHOD"]== "POST"){
+        $query = $_POST['query'];
+        
+        
+        require_once("connect-db.php");
+        $sql = "SELECT * FROM products WHERE (`name` LIKE '%".$query."%')";
+            
+        $statement1 = $db->prepare($sql);
+        $statement1 -> bindValue(':query', $query);
+        
+        
+        if($statement1->execute()){
+            $products = $statement1->fetchAll();
+            $statement1->closeCursor();
+        }else{
+            $error = "Error finding search";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +47,38 @@ $userId = 99999;
 <body class="">
     <?php include("nav.html");?>
 
-    
+    <div class="container">
+        <br><br><h2>Results</h2><br>
+       <div class="row">
+          
+           <div class="col-md-1"></div>
+           <div class="col-md-10"></div>
+                <div class="cardComponent">
+                    <?php
+                            foreach($products as $c){?>
+                                    <div class="" >
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $c["name"];?></h5>
+                                                <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
+                                                <p class="card-text"><?php echo $c["description"];?></p>
+                                                <form action="productDetails.php" method="post">
+                                                    <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">
+                                                    <button class="btn btn-primary" type="submit">Details</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                
+                        <?php } ?>
+                    </div>
+           </div>
+           <div class="col-md-1"></div>
+
+       </div>  
+      
     
     
 
