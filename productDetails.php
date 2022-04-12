@@ -1,6 +1,6 @@
 <?php
 session_start();
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Successful Order - Sustain Jewelry Co.</title>
+    <title>Review Item - Sustain Jewelry Co.</title>
     <meta name="description" content="Successful Order">
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,7 +31,7 @@ session_start();
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Review Item</h1>
+      <h2 class="display-3 fw-bold">Review Item</h2>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
@@ -41,19 +41,16 @@ session_start();
         <div class="col-md-6">
             <div class="bg-white p-4 text-start">
             <article>
-           <h3>Item Details</h3>
+           <h2>Item Details</h2>
             <form method="POST" action="addToCart.php">
            
                
                 <?php
+                require_once("connect-db.php");
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $productId = $_POST["productId"];
 
-                    if($_SESSION["logged_in"] = "true"){
-                        
-                    }
-
-                    require_once("connect-db.php");
+                    
                     $error = "";
                     
                     $sql = "select * from products where productId = :productId";
@@ -84,24 +81,11 @@ session_start();
                         SKU (Item Id)
                         <input type="text" name="productId" value="<?php echo $c["productId"];?>">
                         <br><br>
-                        user Id)
-                        <?php 
-                            if($_SESSION["logged_in"] != "true"){
-    
-                                echo "999999";
-                            }
-                            if($_SESSION["logged_in"] = "true"){
-
-                                echo $_SESSION["userId"];
-                            }
-                        
-                        ?>
+                        user Id
                         <input type="hidden" name="userId" value="<?php 
                             if($_SESSION["logged_in"] != "true"){
     
-                                echo "999999";
-                            }
-                            if($_SESSION["logged_in"] = "true"){
+                            } else {
 
                                 echo $_SESSION["userId"];
                             }
@@ -111,13 +95,13 @@ session_start();
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
                         <br><br>
                         Price:
-                        <input type="text" name="price" value="<?php echo $c["price"];?>" readonly>
+                        <input type="float" name="price" value="<?php echo $c["price"];?>" readonly>
                         <br><br>
                         Quantity:
                         <input type="text" name="qty" required>
                         <br><br>
                         Description:
-                        <input type="text" name="description" value="<?php echo $c["description"]?>" readonly>
+                        <input type="text" name="description" value="<?php echo $c["description"]?>" height="75px" readonly>
                         <br><br>
                         Category:
                         <input type="text" name="category" value="<?php echo $c["category"];?>" readonly>
