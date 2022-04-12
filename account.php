@@ -58,9 +58,10 @@ if($_SESSION["logged_in"] != "true"){
             <div class="col-md-4">
                 <br><br><br><br><br><br><br>
                 <br>
-                <a class="" href="profileInfoUpdate.php">
-                    <button type="button"  class="btn btn-secondary">Update Info</button>
-                </a>
+                <form method="post" action="profileInfoUpdate.php">
+                    
+                    <button type="submit" value="Submit" class="btn btn-secondary">Update Info</button>
+                </form>
             </div>
         </div>
     </div>

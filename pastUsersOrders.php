@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             $customers = $statement1->fetchAll();
             $statement1->closeCursor();
         }else{
-            $error = "Error finding product";
+            $error = "Error finding user";
         }
     }
 if($_SESSION["logged_in"] != "true"){   
@@ -61,7 +61,7 @@ if($_SESSION["logged_in"] != "true"){
                 require_once("connect-db.php");
                 $userId = $_SESSION["userId"];
 
-                $sql = "select * from orders where userId = :userId";
+                $sql = "select * from users where userId = :userId";
 
                 $statement1 = $db->prepare($sql);
                 $statement1 -> bindValue(':userId',$userId);

@@ -2,11 +2,12 @@
 session_start();
 ?>
 <?php
+    require_once("connect-db.php");
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         $productId = $_POST["productId"];
         
         
-        require_once("connect-db.php");
+        
         $sql = "select * from products where productId = :productId";
             
         $statement1 = $db->prepare($sql);

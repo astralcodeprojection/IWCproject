@@ -11,6 +11,25 @@ if($_SESSION["logged_in"] != "true"){
 }
 
 ?>
+<?php
+    require_once("connect-db.php");
+    if($_SERVER["REQUEST_METHOD"]== "POST"){
+        $userId = $_SESSION["userId"];
+        
+        $sql = "select * from users where userId = :userId";
+            
+        $statement1 = $db->prepare($sql);
+        $statement1 -> bindValue(':userId', $userId);
+        
+        
+        if($statement1->execute()){
+            $customers = $statement1->fetchAll();
+            $statement1->closeCursor();
+        }else{
+            $error = "Error finding user";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -36,9 +55,40 @@ if($_SESSION["logged_in"] != "true"){
 
 <body class="">
     <?php include("nav.html");?>
+    <div class="col-md-12">
+        
+        <article class="left">
+
+            <form method="POST" action="profileUpdateProcessing.php">
+                <?php foreach($customers as $c) :?>
+                    Username: <input type="text" name="username" required value="<?php echo $c["username"];?>">
+                    <br><br>
+                    Email: <input type="email" name="email" required value="<?php echo $c["email"];?>">
+                    <br><br>
+                    First Name: <input type="text" name="firstName" required value="<?php echo $c["firstName"];?>">
+                    <br><br>
+                    Last Name: <input type="text" name="lastName" required value="<?php echo $c["lastName"];?>">
+                    <br><br>
+                    Address: <input type="text" name="address" required value="<?php echo $c["address"];?>">
+                    <br><br>
+                    State: <input type="text" name="state" required value="<?php echo $c["state"];?>">
+                    <br><br>
+                    City: <input type="text" name="city" required value="<?php echo $c["city"];?>">
+                    <br><br>
+                    <input type="hidden" name="userId" value="<?php echo $c["userId"];?>">
+                <?php endforeach;?>
+                <input type="submit" value="Submit">
+                
+            </form>
+        </article>
+    </div>
 
     
     
+    
+
+</body>
+
     
 
 </body>

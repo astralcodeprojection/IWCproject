@@ -59,6 +59,7 @@ if($_SESSION["logged_in"] != "true"){
                 <br><br><br><br><br><br><br>
                 <br>
                 <h2>View My Past<br>Orders</h2>
+                
                 <a class="" href="pastUsersOrders.php">
                     
                     <button type="button"  class="btn btn-secondary">Past Orders</button>
