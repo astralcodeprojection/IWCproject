@@ -72,7 +72,7 @@ session_start();
                 
         }//end of post
                 ?>
-
+            <script>window.location = "cart.php";</script>
         </article>
 
 

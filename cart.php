@@ -44,24 +44,45 @@ session_start();
                 <article class="left">
 
                 <?php
+                    
                     require_once("connect-db.php");
-                    $userId = $_SESSION["userId"];
+                    if($_SESSION["logged_in"] != "true"){
                     
                     
-                    $error1 = "";
+                        $error1 = "";
 
-                    $sql = "select * from cart WHERE userId = :userId";
-                
-                    $statement1 = $db->prepare($sql);
-                    $statement1 -> bindValue(':userId' , $userId);
+                        $sql = "select * from cart WHERE userId = '999999%'";
                     
-                
-                    if($statement1->execute()){
-                        $customers = $statement1->fetchAll();
-                        $statement1->closeCursor();
-                    }else{
-                        $error1= "Error finding cart.";
+                        $statement1 = $db->prepare($sql);
+                        
+                    
+                        if($statement1->execute()){
+                            $customers = $statement1->fetchAll();
+                            $statement1->closeCursor();
+                        }else{
+                            $error1= "Error finding cart.";
+                        }
+                    } else {
+
+                        $userId = $_SESSION["userId"];
+                    
+                    
+                        $error1 = "";
+
+                        $sql = "select * from cart WHERE userId = :userId";
+                    
+                        $statement1 = $db->prepare($sql);
+                        $statement1 -> bindValue(':userId' , $userId);
+                        
+                    
+                        if($statement1->execute()){
+                            $customers = $statement1->fetchAll();
+                            $statement1->closeCursor();
+                        }else{
+                            $error1= "Error finding cart.";
+                        }
                     }
+                    
                 
                 
                 ?>
