@@ -112,7 +112,7 @@ session_start();
                 <div class="row justify-content-sm-center">
                     <div class="col-md-5"></div>
                     <div class="col-md-3">
-                        <a class="" href="">
+                        <a class="" href="ourStory.php">
                             <button type="button"  class="btn btn-primary">Our Mission</button>
                         </a>
                     </div>
@@ -131,8 +131,8 @@ session_start();
                 <div class="row justify-content-sm-center">
                     <div class="col-md-5"></div>
                     <div class="col-md-3">
-                        <a class="" href="">
-                            <button type="button"  class="btn btn-primary">Our Mission</button>
+                        <a class="" href="materials.php">
+                            <button type="button"  class="btn btn-primary">Our Materials</button>
                         </a>
                     </div>
                     <div class="col-md-4"></div>

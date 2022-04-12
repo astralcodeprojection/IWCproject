@@ -37,33 +37,37 @@ if($_SESSION["logged_in"] != "true"){
     <?php include("nav.html");?>
     <div class="container">
         <br><br>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-9"></div>
-            <br>
-                <h2>Welcome <?php echo $_SESSION["firstName"];?> <?php echo $_SESSION["lastName"];?>!</h2>
-            </div>
-            <div class="col-md-2"></div>
-            
-        </div>
         <br><br><br>
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <h2>Profile Management</h2>
-                <h2>Links:</h2>
+            <div class="col-md-4">
                 <br>
-            </div>
-            <div class="col-md-6"></div>
+                <h3>Profile Info</h3><br>
+                <h4>Username: <?php echo $_SESSION["username"];?></h4>
+                <h4>Email: <?php echo $_SESSION["email"];?></h4>
+                <h4>Name: <?php echo $_SESSION["firstName"];?> <?php echo $_SESSION["lastName"];?></h4>
                 
             </div>
-            
+            <div class="col-md-4">
+                <br><br><br><br><br><br><br>
+                <h4>Address: <?php echo $_SESSION["address"];?></h4>
+                <h4>State: <?php echo $_SESSION["state"];?></h4>
+                <h4>City: <?php echo $_SESSION["city"];?></h4>
+                <br>
+                
+            </div>
+            <div class="col-md-4">
+                <br><br><br><br><br><br><br>
+                <br>
+                <a class="" href="profileInfoUpdate.php">
+                    <button type="button"  class="btn btn-secondary">Update Info</button>
+                </a>
+            </div>
         </div>
     </div>
     
     
     
-
+ 
 </body>
 <?php include("navfooter.php");?>
 

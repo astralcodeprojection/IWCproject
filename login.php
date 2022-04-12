@@ -98,7 +98,7 @@ echo $_SESSION["logged_in"];
                         
         		?>
                 <script type="text/javascript">
-                    window.location = "account.php";
+                    window.location = "profile.php";
                 </script>
                 <?php
                     }

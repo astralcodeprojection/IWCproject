@@ -44,10 +44,10 @@ session_start();
                 <article class="left">
 
                 <?php
-                    
+                    require_once("connect-db.php");
                     $userId = $_SESSION["userId"];
                     
-                    require_once("connect-db.php");
+                    
                     $error1 = "";
 
                     $sql = "select * from cart WHERE userId = :userId";
