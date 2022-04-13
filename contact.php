@@ -27,8 +27,73 @@ session_start();
 <body class="">
     <?php include("nav.html");?>
 
+    <br><br>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <h2>Contact Us</h2><br><br>
+
+        </div>
+        
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <h4>Send Us A Message!</h4>
+                <textarea name="msgtxt" id="comments" class="col-md-9" >
+
+                </textarea>
+                <br><br>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+            
+            <?php
+
+            require_once("connect-db.php");
+            $error = $success = $msgtxt = "";
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                $msgtxt = $_POST["msgtxt"];
+                
+                
+             $sql="insert into contact (msgtxt) VALUES (:msgtxt)";
+                
+                $statement1 = $db->prepare($sql);
+                
+                $statement1->bindValue(':msgtxt', $msgtxt);
+                
+                if($statement1->execute()){
+                    $statement1->closeCursor();
+                    $success = "Thank You!";
+                 }else{
+                    $error="Error sending message";
+                };
+
+        
+        ?>
+            <?php
+                if($error !=""){
+                    echo "<h3>$error</h3>";
+                }else{
+                    echo "<h3>$success</h3>";
+                    
+                }
+                
+        }//end of post
+                ?>
+          
     
     
+        </div>
+    </div>
+   
+        <br><br>
+            
+
     
 
 </body>
