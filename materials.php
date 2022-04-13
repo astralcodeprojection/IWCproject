@@ -28,6 +28,34 @@ session_start();
     <?php include("nav.html");?>
 
     
+    <div class="row">
+        <div class="col-md-1">
+            <h2>Our Materials</h2>
+        </div>
+        <div class="col-md-10">
+            
+        </div>
+        <div class="col-md-1">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+        </div>
+        <div class="col-md-1">
+            
+        </div>
+    </div>
     
     
 

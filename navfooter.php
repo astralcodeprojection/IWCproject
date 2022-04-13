@@ -30,6 +30,7 @@
           <li><a href="contact.php">Business Information</a></li>
           <li><a href="profile.php">FAQs</a></li>
           <li><a href="admin.php">Employee Portal</a></li>
+          <li><a href="webPolicy.php">Privacy Policy</a></li>
           
         </ul>
       </div>

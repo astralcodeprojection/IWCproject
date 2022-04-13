@@ -29,22 +29,23 @@ session_start();
 
     <br><br>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
         </div>
         <div class="col-md-9">
             <h2>Sustain Jewelry<br>
-            Company's Story</h2><br><br>
+            Company's Story</h2>
 
         </div>
-        
+        <div class="col-md-1">
+            
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
-
+        <div class="col-md-2">
+            
         </div>
         <div class="col-md-9">
-            <h3>Our goal is to create a safe, healthy and sustainable line<br>of products for our people and communities.</h3><br>
+            <h4>Our goal is to create a safe, healthy and sustainable line of products<br>for our people and communities.</h4><br>
             <p> Sustain jewelry company started from noticing many brands that were selling hazardous<br>
                  jewelry and wanting to make changes in the industry by creating a brand that<br>
                  will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
@@ -52,35 +53,11 @@ session_start();
                  impact on earth. To make sure of this, 90% of our base metals will be recycled.<br>
                  Our goal is to create a safe, healthy and sustainable world for our people and<br>
                  communities.</p><br><br>
+        <div class="col-md-1">
             
         </div>
     </div>
-    <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <br><br><br><br><br><br><br>
-                <br><br>
-                <h2>About our<br>Practices</h2>
-                <a class="" href="aboutUs.php">
-                    
-                    <button type="button"  class="btn btn-secondary">Account</button>
-                </a>
-                
-            </div>
-            <div class="col-md-4">
-                <br><br><br><br><br><br><br>
-                <br>
-                <h2>View our <br>materials<br>information</h2>
-                
-                <a class="" href="materials.php">
-                    
-                    <button type="button"  class="btn btn-secondary">Our Materials</button>
-                </a>
-            </div>
-            <div class="col-md-1"></div>
-
-        </div>
-        <br><br>
+    
     
 
 </body>

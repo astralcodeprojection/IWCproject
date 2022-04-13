@@ -82,7 +82,7 @@ session_start();
                         <input type="text" name="productId" value="<?php echo $c["productId"];?>">
                         <br><br>
                         user Id
-                        <input type="text" name="userId" value="<?php 
+                        <input type="hidden" name="userId" value="<?php 
                             if($_SESSION["logged_in"] != "true"){
                                 echo "999999";
                             } else {
