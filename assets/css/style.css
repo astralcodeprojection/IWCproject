@@ -11123,6 +11123,16 @@ textarea.form-control-lg {
 * h2, * .h2 {
   font-family: "Playfair Display", serif;
 }
+* .carousel-inner {
+  height: 500px;
+}
+* .item img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  max-height: 500px;
+}
 * .midPageSection {
   background-color: #0a5a2e;
 }

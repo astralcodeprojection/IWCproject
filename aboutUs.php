@@ -32,8 +32,8 @@ session_start();
         <div class="col-md-2">
         </div>
         <div class="col-md-9">
-            <h2>Sustain Jewelry<br>
-            Company's Story</h2>
+            <h2>About Jewelry<br>
+            Jewelry Company</h2>
 
         </div>
         <div class="col-md-1">
@@ -45,14 +45,11 @@ session_start();
             
         </div>
         <div class="col-md-9">
-            <h4>Our goal is to create a safe, healthy and sustainable line of products<br>for our people and communities.</h4><br>
-            <p> Sustain jewelry company started from noticing many brands that were selling hazardous<br>
-                 jewelry and wanting to make changes in the industry by creating a brand that<br>
-                 will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
-                 make sure the metals we use to handcraft into our jewelry will have a small<br>
-                 impact on earth. To make sure of this, 90% of our base metals will be recycled.<br>
-                 Our goal is to create a safe, healthy and sustainable world for our people and<br>
-                 communities.</p><br><br>
+            <h4>Our mission is to create a positive impact in the world, by creating beautiful <br>
+            jewelry that contains recycled non-hazardous materials.</h4><br>
+            <p> Buying our jewelry will help you feel better about your choice at an affordable price. Choosing our
+                <br> brand will reduce the harmful effects on our world. Overall, you will feel safer and better 
+                <br>about your jewelry choice when choosing non-hazardous materials.  </p><br><br>
         <div class="col-md-1">
             
         </div>

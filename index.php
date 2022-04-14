@@ -34,7 +34,10 @@ session_start();
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/mothers day sale.jpg" class="d-block w-100" alt="wood jewelry">
+                                <img src="img/New Mothers Day Image.jpg" class="d-block w-100" alt="wood jewelry">
+                            </div>
+                            <div class="carousel-item active">
+                                <img src="img/siteHeader.jpg" class="d-block w-100" alt="site banner">
                             </div> 
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -50,15 +53,8 @@ session_start();
     <section id="home" class="homepage">
         
         <div class="container">
-            
-
-           
-            <div class="row">
-                
-            </div>
-            <br><br> 
-            <h2 class="display-4 fw-bold">Current Collections</h2>
-             <br><br>
+            <h2 class="display-4 fw-bold">Current Specials:</h2>
+             <br>
             <div class="row cardComponent">
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">

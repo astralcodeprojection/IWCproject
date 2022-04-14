@@ -24,6 +24,18 @@ $warning: $brandcolourtwo;
         font-family: 'Playfair Display', serif;
     }
 
+    .carousel-inner {
+        height: 500px;
+    }
+
+    .item img {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        max-height: 500px;
+    }
+
     .midPageSection {
         background-color: $warning;
 

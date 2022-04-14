@@ -20,6 +20,8 @@
         <ul class="list-inline company-list">
           <li><a href="ourStory.php">About Us</a></li>
           <li><a href="materials.php">Our Materials</a></li>
+          <li><a href="webPolicy.php">Privacy Policy</a></li>
+
           
         </ul>
       </div>
@@ -27,18 +29,16 @@
         <h5 class="text-capitalize fw-bold">contact us</h5>
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
         <ul class="list-inline company-list">
-          <li><a href="contact.php">Business Information</a></li>
+          <li><a href="contact.php">Contact Page</a></li>
           <li><a href="profile.php">FAQs</a></li>
-          <li><a href="admin.php">Employee Portal</a></li>
-          <li><a href="webPolicy.php">Privacy Policy</a></li>
-          
+          <li><a href="admin.php">Employee Portal</a></li>          
         </ul>
       </div>
       <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
         <h5 class="text-capitalize fw-bold">orders</h5>
         <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
         <ul class="list-inline company-list">
-          <li><a href="account.php">Current Orders</a></li>
+          <li><a href="pastUsersOrders.php">Current Orders</a></li>
           
         </ul>
       </div>
