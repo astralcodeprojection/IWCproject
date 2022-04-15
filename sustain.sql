@@ -1,14 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 13, 2022 at 08:47 PM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Host: localhost
+-- Generation Time: Apr 15, 2022 at 08:16 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `sustain`
@@ -23,8 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `cartId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `price` decimal(20,2) NOT NULL,
+  `productId` int(11) DEFAULT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -32,9 +38,9 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cartId`, `userId`, `name`, `price`, `qty`) VALUES
-(1, 999999, 'Ring Cuff Bracelet', '22.99', 7),
-(2, 1, 'Simple Cuff Bracelet', '21.99', 5);
+INSERT INTO `cart` (`cartId`, `userId`, `productId`, `qty`) VALUES
+(5, 999999, 39, 3),
+(7, 1, 26, 4);
 
 -- --------------------------------------------------------
 
@@ -182,7 +188,8 @@ INSERT INTO `users` (`userId`, `email`, `username`, `password`, `firstName`, `la
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartId`),
-  ADD KEY `userId` (`userId`);
+  ADD KEY `userId` (`userId`),
+  ADD KEY `cartproductId` (`productId`);
 
 --
 -- Indexes for table `contact`
@@ -217,7 +224,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -242,3 +249,18 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cartproductId` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

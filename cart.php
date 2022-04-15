@@ -39,102 +39,139 @@ session_start();
 
     <!-- START THE DESCRIPTION CONTENT  -->
     
-        <div class="row">
-            <div class="col-md-12">
-                <article class="left">
-
-                <?php
-                    
-                    require_once("connect-db.php");
-                    if($_SESSION["logged_in"] != "true"){
-                    
-                    
-                        $error1 = "";
-
-                        $sql = "select * from cart WHERE userId = '999999%'";
-                    
-                        $statement1 = $db->prepare($sql);
-                        
-                    
-                        if($statement1->execute()){
-                            $customers = $statement1->fetchAll();
-                            $statement1->closeCursor();
-                        }else{
-                            $error1= "Error finding cart.";
-                        }
-                    } else {
-
-                        $userId = $_SESSION["userId"];
-                    
-                    
-                        $error1 = "";
-
-                        $sql = "select * from cart WHERE userId = :userId";
-                    
-                        $statement1 = $db->prepare($sql);
-                        $statement1 -> bindValue(':userId' , $userId);
-                        
-                    
-                        if($statement1->execute()){
-                            $customers = $statement1->fetchAll();
-                            $statement1->closeCursor();
-                        }else{
-                            $error1= "Error finding cart.";
-                        }
-                    }
-                    
                 
-                
-                ?>
-            <h3>Cart Contents</h3>
-                <table>
-                    <tr>
-                    
-                        <th>Menu Item</th>
-                        <th>Price</th>
-                        <th>qty</th>
-                        <th>user Id</th>
-                        
-                    
-                    </tr>
-                
-                    <?php
-                        foreach($customers as $c){?>
-                    <tr>
-                        <td><?php echo $c["n"];?></td>
-                        <td><?php echo $c["price"]." $";?></td>
-                        
-                        <td><?php echo $c["qty"];?></td>
-                        <td><?php echo $c["userId"];?></td>
-                        
-                        <td>
-                            <form action="xxxx.php" method="post">
-                                <input type="hidden" name="preId" value="<?php echo $c["preId"];?>">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                        
-                    </tr>
-                    <?php } ?>
-                </table>                 
-                <br><br><br>
-            <article>
+
+        <?php
             
-            <div>
-                            <form action="confirmpurchase.php" method="post">
-                            
-                            <button type="submit">Checkout</button>
-                            </form>
+            require_once("connect-db.php");
+            
+            /* delete/update if post is set for it */
+            if(isset($_POST['delete'])){
+                
+                $productId = $_POST["productId"];
+                $delQty = $_POST["qty"];
+                $userId = $_POST["userId"];
+                if($delQty > 1){
+                    $delQty = $delQty - 1;
+                    
+                    $reduce_sql = "update cart set qty = :delQty WHERE productId = :productId AND userId = :userId";
+                    $reduce = $db->prepare($reduce_sql);
+                    $reduce->bindValue(":delQty", $delQty);
+                    $reduce->bindValue(":productId", $productId);
+                    $reduce->bindValue(":userId", $userId);
+                    if($reduce->execute()){
+                        $reduce->closeCursor();
+                    }
+                } else if($delQty == 1){
+                    $delete_sql = "delete from cart WHERE productId = :productId AND userId = :userId";
+                    $delete = $db->prepare($delete_sql);
+                    $delete->bindValue(":productId", $productId);
+                    $delete->bindValue(":userId", $userId);
+                
+                    if($delete->execute()){
+                        $delete->closeCursor();
+                        $success2 = "Success deleting product.";
+                    } else {
+                        $error2 = "Error deleting product.";
+                    } 
+                }
+                    
+            }
+            /* grab all cart items */
+            if($_SESSION["logged_in"] != "true"){
+                    $error1 = "";
+
+                    $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = '999999%'";
+                
+                    $statement1 = $db->prepare($sql);
+                
+                    if($statement1->execute()){
+                        $items = $statement1->fetchAll();
+                        $statement1->closeCursor();
+                    }else{
+                        $error1= "Error finding cart.";
+                    }
+            }else {
+
+                $userId = $_SESSION["userId"];
+            
+            
+                $error1 = "";
+
+                $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = :userId";
+            
+                $statement1 = $db->prepare($sql);
+                $statement1 -> bindValue(':userId' , $userId);
+                
+            
+                if($statement1->execute()){
+                    $items = $statement1->fetchAll();
+                    $statement1->closeCursor();
+                }else{
+                    $error1= "Error finding cart.";
+                }
+            }
+                    
+                
+        ?>
+            <h3>Cart Contents</h3>
+                
+                
+            <?php
+            if(count($items) == 0){
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>You do not have any items in your cart. <a href="collections.php" style="color: blue">Browse our inventory</a></p>
+                    </div>
                 </div>
-            </article>
-            </article>
+                <?php
+            }
+                foreach($items as $item){?>
+            
+                
+            <div class="row">
+                
+                <div class="card w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 text-center">
+                            <img src="<?php echo $item["img"]?>" class="img-fluid rounded-start" style="max-height: 15rem" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $item["name"]?></h5>
+                                <p class="card-text"><?php echo $item["description"]?></p>
+                                <p class="card-text"><medium class="text-muted">Price: $<?php echo $item["price"]?></medium></p>
+                                <p class="card-text"><medium class="text-muted">Quantity: <?php echo $item["qty"]?></medium></p>
+                            </div>
+                        </div> 
+                        <div class="col-md-2 card-body">
+                            <div>
+                                <form style="margin: 25%; width: 100%;" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                                    <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
+                                    <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
+                                    <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
+                                    
+                                    <button type="submit" style="padding: 2%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;"name="delete" class="redirect_button" onclick="return confirm('Are you sure you want to remove this product from your cart?')">Remove From Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
-            <div class="col-md-6">
-                <div class="bg-white p-4 text-start">
-                <p class="fw-light">
-                    a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
-                </p>
+            
+            <br>
+            <?php } ?>        
+                   
+            <br><br><br>
+
+            <article>
+                <form action="confirmpurchase.php" method="post">
+                
+                <button type="submit">Checkout</button>
+                </form>
                 </div>
+            </article>
             </div>
         </div>
     </div>

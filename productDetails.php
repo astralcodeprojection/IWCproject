@@ -78,10 +78,7 @@ session_start();
                 <?php    
                     foreach($customers as $c){?>
                         
-                        SKU (Item Id)
-                        <input type="text" name="productId" value="<?php echo $c["productId"];?>">
-                        <br><br>
-                        user Id
+                        <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">
                         <input type="hidden" name="userId" value="<?php 
                             if($_SESSION["logged_in"] != "true"){
                                 echo "999999";
@@ -98,7 +95,7 @@ session_start();
                         <input type="float" name="price" value="<?php echo $c["price"];?>" readonly>
                         <br><br>
                         Quantity:
-                        <input type="text" name="qty" required>
+                        <input type="number" name="qty" value="1" required>
                         <br><br>
                         Description:
                         <input type="text" name="description" value="<?php echo $c["description"]?>" readonly>

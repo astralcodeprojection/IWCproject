@@ -25,7 +25,6 @@ $userId = 99999;
     </script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="assets/js/filter.js"></script>
 </head>
 
 <body class="">
@@ -47,7 +46,6 @@ $userId = 99999;
                     $sql = "select * from products WHERE category LIKE 'Earrings%'";
                 
                     $statement1 = $db->prepare($sql);
-                    $statement1 -> bindValue(':userId' , $userId);
                     
                 
                     if($statement1->execute()){
@@ -55,8 +53,8 @@ $userId = 99999;
                         $statement1->closeCursor();
                     }else{
                         $error1= "Error finding items.";
+                        
                     }
-                
                 
                 ?>
                     <?php
