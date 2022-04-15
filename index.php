@@ -36,7 +36,7 @@ session_start();
                             <div class="carousel-item active">
                                 <img src="img/New Mothers Day Image.jpg" class="d-block w-100" alt="wood jewelry">
                             </div>
-                            <div class="carousel-item active">
+                            <div class="carousel-item">
                                 <img src="img/siteHeader.jpg" class="d-block w-100" alt="site banner">
                             </div> 
                         </div>
