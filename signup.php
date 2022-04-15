@@ -51,7 +51,7 @@ session_start();
             <?php
 
             require_once("connect-db.php");
-            $error = $success = $email = $username = $password = $firstName =  $lastName =  $address = $state =  $city = "";
+            $error = $success = $email = $username = $password = $firstName = $lastName = $address = $state = $city = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $email = $_POST["email"];
                 $username = $_POST["username"];
