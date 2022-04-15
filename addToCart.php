@@ -30,21 +30,19 @@ session_start();
             
             require_once("connect-db.php");
             
-            $error = $success = $productId = $userId = $name = $price = $qty = "";
+            $error = $success = $productId = $userId = $qty = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $productId = $_POST["itemId"];
                 $userId = $_POST["userId"];
-                $name = $_POST["name"];
-                $price = $_POST["price"];
+                $productId = $_POST["productId"];
                 $qty = $_POST["qty"];
                 
-             $sql = "insert into cart (userId, name, price, qty) VALUES (:userId, :name, :price, :qty)";
+             $sql = "insert into cart (userId, productId, qty) VALUES (:userId, :productId, :qty)";
                 
                 $statement1 = $db->prepare($sql);
                 
                 $statement1->bindValue(':userId', $userId);
-                $statement1->bindValue(':name', $name);
-                $statement1->bindValue(':price', $price);
+                $statement1->bindValue(':productId', $productId);
                 $statement1->bindValue(':qty', $qty);
                
                 function test_input($data) {
