@@ -2,13 +2,16 @@
 $main: #ffffff;
 $accents: #151414;
 $brandcolourtwo: #0a5a2e;
-
+$WARNINGBAR: #ff0000b3;
+$yellowBrand: #e1cf00;
 
 
 
 $primary: $main;
 $secondary: $accents;
 $warning: $brandcolourtwo;
+$danger: $WARNINGBAR;
+
 
 
 
@@ -51,6 +54,5 @@ $warning: $brandcolourtwo;
             color: white;
         }
     }
-    
-}
 
+}
