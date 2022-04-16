@@ -1,7 +1,7 @@
 <?php
 $dsn="mysql:host=localhost;dbname=sustain";
 $username="root";
-$password="";
+$password="root";
 try{
     $db=new PDO($dsn, $username, $password);
 }catch(Exception $e){

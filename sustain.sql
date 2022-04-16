@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `cartId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-<<<<<<< HEAD
   `productId` int(11) DEFAULT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -43,13 +42,6 @@ INSERT INTO `cart` (`cartId`, `userId`, `productId`, `qty`) VALUES
 (5, 999999, 39, 3),
 (7, 1, 26, 4);
 
-=======
-  `name` varchar(250) NOT NULL,
-  `price` varchar(250) NOT NULL,
-  `qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
->>>>>>> b99c7016610e01f14e9a7b48aeb352775a2a6eb8
 -- --------------------------------------------------------
 
 --
@@ -232,11 +224,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-<<<<<<< HEAD
   MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-=======
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT;
->>>>>>> b99c7016610e01f14e9a7b48aeb352775a2a6eb8
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -260,7 +248,6 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-<<<<<<< HEAD
   MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -277,6 +264,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-=======
-  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT;
->>>>>>> b99c7016610e01f14e9a7b48aeb352775a2a6eb8
