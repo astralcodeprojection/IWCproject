@@ -27,36 +27,35 @@ session_start();
 <body class="">
     <?php include("nav.html");?>
 
-    
+    <br><br>
     <div class="row">
-        <div class="col-md-1">
-            <h2>Our Materials</h2>
+        <div class="col-md-3">
         </div>
-        <div class="col-md-10">
-            
-        </div>
-        <div class="col-md-1">
-            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-9">
+            <h2>Our Materials</h2><br><br>
 
         </div>
-        <div class="col-md-10">
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
-            <h4>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </h4>
+        
         </div>
-        <div class="col-md-1">
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9">
+            <h3>Our goal is to create a safe, healthy and sustainable line<br>of products for our people and communities.</h3><br>
+            <p> Sustain jewelry company started from noticing many brands that were selling hazardous<br>
+                 jewelry and wanting to make changes in the industry by creating a brand that<br>
+                 will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
+                 make sure the metals we use to handcraft into our jewelry will have a small<br>
+                 impact on earth. To make sure of this, 90% of our base metals will be recycled.<br>
+                 Our goal is to create a safe, healthy and sustainable world for our people and<br>
+                 communities.</p><br><br>
             
         </div>
     </div>
     
+        <br><br>
     
 
 </body>

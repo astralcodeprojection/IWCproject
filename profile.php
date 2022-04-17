@@ -40,9 +40,9 @@ if($_SESSION["logged_in"] != "true"){
         <br><br><br>
         <div class="row">
             
-            <div class="col-md-6">
-                <br><br><br><br><br><br><br>
-                <br>
+            <div class="col-md-6 justify-content-sm-center">
+                <br><br><br><br>
+                <img src="img/image61-95.png" class="col-md-6">
                 <h2>View My Profile<br>Information</h2>
                 <form class="" action="account.php" method="POST">
                     <input type="hidden" name="userId" value="<?php echo $_SESSION["userId"];?>">
@@ -50,9 +50,9 @@ if($_SESSION["logged_in"] != "true"){
                 </form>
                 
             </div>
-            <div class="col-md-6">
-                <br><br><br><br><br><br><br>
-                <br>
+            <div class="col-md-6 justify-content-sm-center">
+                <br><br><br><br>
+                <img src="img/image27-99.png" class="col-md-6">
                 <h2>View My Past<br>Orders</h2>
                 
                 <a class="" href="pastUsersOrders.php">

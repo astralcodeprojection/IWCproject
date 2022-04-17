@@ -32,8 +32,7 @@ session_start();
         <div class="col-md-2">
         </div>
         <div class="col-md-9">
-            <h2>About Jewelry<br>
-            Jewelry Company</h2>
+            <h2>About Us</h2>
 
         </div>
         <div class="col-md-1">

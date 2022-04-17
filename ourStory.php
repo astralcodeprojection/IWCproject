@@ -58,18 +58,19 @@ session_start();
     <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-4">
-                <br><br><br><br><br><br><br>
+                
                 <br><br>
+                <img src="img/worker.jpg" class="col-md-8">
                 <h2>About our<br>Practices</h2>
                 <a class="" href="aboutUs.php">
                     
-                    <button type="button"  class="btn btn-secondary">Account</button>
+                    <button type="button"  class="btn btn-secondary">About Our Practices</button>
                 </a>
                 
             </div>
             <div class="col-md-4">
-                <br><br><br><br><br><br><br>
-                <br>
+                
+                <img src="img/Copper-Ore-Direct-From-Mine.jpg" class="col-md-7">
                 <h2>View our <br>materials<br>information</h2>
                 
                 <a class="" href="materials.php">
