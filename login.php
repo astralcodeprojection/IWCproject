@@ -36,6 +36,9 @@ echo $_SESSION["logged_in"];
             <h2 class="fw-light">
                 Welcome to our profile page! <br><br></h2>
                 <p>If you do not have a profile at this time, please click below <br>to sign up to access this feature and get our newsletter!</p>
+                <button onclick="window.location.href='signup.php'">
+                    Sign Up
+                </button>
             </div>
         </div>
         <div class="col-md-6">

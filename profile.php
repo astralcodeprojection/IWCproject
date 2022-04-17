@@ -39,20 +39,15 @@ if($_SESSION["logged_in"] != "true"){
         <br><br>
         <br><br><br>
         <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-justify-center">Welcome <?php echo $_SESSION["firstName"];?>!</h2><br>
-            </div>
-        </div>
-        <div class="row">
             
             <div class="col-md-6">
                 <br><br><br><br><br><br><br>
                 <br>
                 <h2>View My Profile<br>Information</h2>
-                <a class="" href="account.php">
-                    
-                    <button type="button"  class="btn btn-secondary">Account</button>
-                </a>
+                <form class="" action="account.php" method="POST">
+                    <input type="hidden" name="userId" value="<?php echo $_SESSION["userId"];?>">
+                    <button class="btn btn-secondary" type="submit">Profile</button>
+                </form>
                 
             </div>
             <div class="col-md-6">

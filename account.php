@@ -10,6 +10,25 @@ if($_SESSION["logged_in"] != "true"){
 }
 
 ?>
+<?php
+    require_once("connect-db.php");
+    if($_SERVER["REQUEST_METHOD"]== "POST"){
+        $userId = $_SESSION["userId"];
+        
+        $sql = "select * from users where userId = :userId";
+            
+        $statement1 = $db->prepare($sql);
+        $statement1 -> bindValue(':userId', $userId);
+        
+        
+        if($statement1->execute()){
+            $customers = $statement1->fetchAll();
+            $statement1->closeCursor();
+        }else{
+            $error = "Error finding user";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -42,16 +61,34 @@ if($_SESSION["logged_in"] != "true"){
             <div class="col-md-4">
                 <br>
                 <h3>Profile Info</h3><br>
-                <h4>Username: <?php echo $_SESSION["username"];?></h4>
-                <h4>Email: <?php echo $_SESSION["email"];?></h4>
-                <h4>Name: <?php echo $_SESSION["firstName"];?> <?php echo $_SESSION["lastName"];?></h4>
+                <article class="left">
+
+                            <?php foreach($customers as $c) :?>
+                                First Name: <?php echo $c["username"];?>
+                                <br><br>
+                                Last Name: <?php echo $c["firstName"];?> <?php echo $c["lastName"];?>
+                                <br><br>
+                                Email: <?php echo $c["email"];?>
+                                <br><br>
+                                
+                                <br><br>
+                            <?php endforeach;?>
+                            
+                        </form>
+                    </article>
                 
             </div>
             <div class="col-md-4">
-                <br><br><br><br><br><br><br>
-                <h4>Address: <?php echo $_SESSION["address"];?></h4>
-                <h4>State: <?php echo $_SESSION["state"];?></h4>
-                <h4>City: <?php echo $_SESSION["city"];?></h4>
+                <br><br><br><br>
+                <?php foreach($customers as $c) :?>
+                                
+                                Address: <?php echo $c["address"];?>
+                                <br><br>
+                                State: <?php echo $c["state"];?>
+                                <br><br>
+                                City: <?php echo $c["city"];?>
+                                <br><br>
+                            <?php endforeach;?>
                 <br>
                 
             </div>
