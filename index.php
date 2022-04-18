@@ -25,6 +25,7 @@ session_start();
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     <div class="col-md-12">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -56,36 +57,52 @@ session_start();
             <h2 class="display-4 fw-bold">Current Specials:</h2>
              <br>
             <div class="row cardComponent">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Bracelets</p>
-                        </div>
+                        <img src="img/tortoisglasswrap.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tortoise Shell Glass Wrap Bracelet</h5>
+                                <h5 class="card-title text-decoration-line-through">45.99</h5>
+                                <h5 class="card-title">35.99 </h5>
+                                <p class="card-text">Sterling silver, featuring green semi-precious stone beads and
+                                     other mixed metals wrapped in four stands of stretch cord.</p>
+                                <form action="productDetails.php" method="post">
+                                    <input type="hidden" name="productId" value="7">
+                                    <button class="btn btn-secondary" type="submit">Details</button>
+                                </form>
+                            </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Rings</p>
-                        </div>
+                        <img src="img/blktexturedoreearrings.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Black Textured Mineral Ore Earrings</h5>
+                                <h5 class="card-title text-decoration-line-through">12.99</h5>
+                                <h5 class="card-title">7.99 </h5>
+                                <p class="card-text">Black metal frames with mineral ore disk inserts.
+                                     Mineral ore is textured for a natural look perfect for casual wear.</p>
+                                <form action="productDetails.php" method="post">
+                                    <input type="hidden" name="productId" value="71">
+                                    <button class="btn btn-secondary" type="submit">Details</button>
+                                </form>
+                            </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Necklaces</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/Jewelry_Wood_planks_542588_1920x1080.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Earrings</p>
-                        </div>
+                        <img src="img/naturalbrassring.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Natural Brass Ring</h5>
+                                <h5 class="card-title text-decoration-line-through">35.99</h5>
+                                <h5 class="card-title">29.99 </h5>
+                                <p class="card-text">A natural brass that was hand cut and polished using traditional methods.
+                                     Choose this for a natural yet refined look.</p>
+                                <form action="productDetails.php" method="post">
+                                    <input type="hidden" name="productId" value="59">
+                                    <button class="btn btn-secondary" type="submit">Details</button>
+                                </form>
+                            </div>
                     </div>
                 </div>
             </div>

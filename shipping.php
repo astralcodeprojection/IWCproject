@@ -25,6 +25,7 @@ session_start();
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
 
     

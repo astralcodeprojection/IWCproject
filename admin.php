@@ -34,6 +34,7 @@ if($_SESSION["admin_login"] != "true"){
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     
    

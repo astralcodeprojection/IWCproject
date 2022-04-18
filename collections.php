@@ -28,6 +28,7 @@ $userId = 99999;
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     <div class="container">
         <br><br><h2>Shop All Collections</h2><br>

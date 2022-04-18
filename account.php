@@ -53,6 +53,7 @@ if($_SESSION["logged_in"] != "true"){
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     <div class="container">
         <br><br>

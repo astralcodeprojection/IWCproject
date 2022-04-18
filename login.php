@@ -1,7 +1,6 @@
 <?php
 session_start();
-echo $_SESSION["logged_in"];
-?>
+Í?>
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +25,7 @@ echo $_SESSION["logged_in"];
 </head>
 
 <body class="">
+    <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
 
     <div class="container">
