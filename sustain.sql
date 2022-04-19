@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 15, 2022 at 08:16 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Host: localhost:3306
+-- Generation Time: Apr 19, 2022 at 10:02 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`cartId`, `userId`, `productId`, `qty`) VALUES
 (5, 999999, 39, 3),
-(7, 1, 26, 4);
+(7, 1, 26, 4),
+(11, 6, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -62,6 +63,8 @@ CREATE TABLE `contact` (
 CREATE TABLE `orders` (
   `orderId` int(9) NOT NULL,
   `userId` int(9) NOT NULL,
+  `productId` int(9) NOT NULL,
+  `name` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `firstName` varchar(250) NOT NULL,
   `lastName` varchar(250) NOT NULL,
@@ -170,7 +173,7 @@ INSERT INTO `products` (`productId`, `name`, `price`, `category`, `description`,
 
 CREATE TABLE `users` (
   `userId` int(9) NOT NULL,
-  'username' varchar(250) NOT NULL,
+  `username` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
   `firstName` varchar(250) NOT NULL,
@@ -179,6 +182,13 @@ CREATE TABLE `users` (
   `state` varchar(250) NOT NULL,
   `city` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `username`, `email`, `password`, `firstName`, `lastName`, `address`, `state`, `city`) VALUES
+(6, 'jacob', 'jacob@jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob');
 
 --
 -- Indexes for dumped tables
@@ -203,7 +213,8 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`orderId`),
-  ADD KEY `userId` (`userId`);
+  ADD KEY `userId` (`userId`),
+  ADD KEY `productId` (`productId`);
 
 --
 -- Indexes for table `products`
@@ -225,7 +236,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -249,7 +260,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

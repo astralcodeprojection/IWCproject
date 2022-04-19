@@ -167,8 +167,10 @@ session_start();
             <br><br><br>
 
             <article>
-                <form action="confirmpurchase.php" method="post">
-                
+                <form action="confirmOrder.php" method="post">
+                    <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
+                    <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
+                    <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
                 <button type="submit">Checkout</button>
                 </form>
                 </div>

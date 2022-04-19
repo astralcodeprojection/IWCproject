@@ -28,8 +28,53 @@ session_start();
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
 
+    <?php 
+    require_once("connect-db.php");
+    $error = $success = $productId = $name = $email = $userId = $firstName = $lastName = $address = $state = $city = $qty = $total = $newsletter = $shipping = $payMethod = "";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $productId = $_POST["productId"];
+        $userId = $_POST["userId"];
+        $qty = $_POST["qty"];
+
+        $sql="insert into orders (userId, productId, name, email, firstName, lastName, address, state, city, qty, total, newsletter, shipping, payMethod) VALUES (:userId, :productId, :name, :email, :firstName, :lastName, :address, :state, :city, :qty, :total, :newsletter, :shipping, :payMethod)";
+
+        $statement1 = $db->prepare($sql);
+
+
+        $statement1->bindValue(':userId', $userId);
+        $statement1->bindValue(':productId', $productId);
+        $statement1->bindValue(':name', $name);
+        $statement1->bindValue(':email', $email);
+        $statement1->bindValue(':firstName', $firstName);
+        $statement1->bindValue(':lastName', $lastName);
+        $statement1->bindValue(':address', $address);
+        $statement1->bindValue(':state', $state);
+        $statement1->bindValue(':city', $city);
+        $statement1->bindValue(':qty', $qty);
+        $statement1->bindValue(':total', $total);
+        $statement1->bindValue(':newsletter', $newsletter);
+        $statement1->bindValue(':shipping', $shipping);
+        $statement1->bindValue(':payMethod', $payMethod);
+
+        if($statement1->execute()){
+            $statement1->closeCursor();
+            $success = "Order Successful.";
+         }else{
+            $error="Error entering order.";
+        };
     
     
+    
+                if($error !=""){
+                    echo "<h3>$error</h3>";
+                }else{
+                    echo "<h3>$success</h3>";
+                    
+                }
+                
+        }//end of post
+        ?>
+                
     
 
 </body>
