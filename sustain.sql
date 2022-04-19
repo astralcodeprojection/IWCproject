@@ -170,6 +170,7 @@ INSERT INTO `products` (`productId`, `name`, `price`, `category`, `description`,
 
 CREATE TABLE `users` (
   `userId` int(9) NOT NULL,
+  'username' varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
   `firstName` varchar(250) NOT NULL,
