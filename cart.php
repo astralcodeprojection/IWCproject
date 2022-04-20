@@ -52,6 +52,40 @@ session_start();
                 $productId = $_POST["productId"];
                 $delQty = $_POST["qty"];
                 $userId = $_POST["userId"];
+                $delete_sql = "delete from cart WHERE productId = :productId AND userId = :userId";
+                $delete = $db->prepare($delete_sql);
+                $delete->bindValue(":productId", $productId);
+                $delete->bindValue(":userId", $userId);
+            
+                if($delete->execute()){
+                    $delete->closeCursor();
+                    $success2 = "Success deleting product.";
+                } else {
+                    $error2 = "Error deleting product.";
+                }
+            }elseif(isset($_POST['add'])){
+                $productId = $_POST["productId"];
+                $curAmt = $_POST["qty"];
+                $userId = $_POST["userId"];
+
+                $curAmt += 1;
+                $addSql = "update cart set qty = :curAmt where productId = :productId AND userId = :userId";
+                $add = $db->prepare($addSql);
+                $add->bindValue(":curAmt", $curAmt);
+                $add->bindValue(":productId", $productId);
+                $add->bindValue(":userId", $userId);
+                
+
+                if($add->execute()){
+                    $add->closeCursor();
+                    $success3 = "Success adding one product.";
+                } else{
+                    $error3 = "Error addign one product.";
+                }
+            }elseif(isset($_POST['removeone'])){
+                $productId = $_POST["productId"];
+                $delQty = $_POST["qty"];
+                $userId = $_POST["userId"];
                 if($delQty > 1){
                     $delQty = $delQty - 1;
                     
@@ -76,7 +110,6 @@ session_start();
                         $error2 = "Error deleting product.";
                     } 
                 }
-                    
             }
             /* grab all cart items */
             if($_SESSION["logged_in"] != "true"){
@@ -144,6 +177,15 @@ session_start();
                                 <p class="card-text"><?php echo $item["description"]?></p>
                                 <p class="card-text"><medium class="text-muted">Price: $<?php echo $item["price"]?></medium></p>
                                 <p class="card-text"><medium class="text-muted">Quantity: <?php echo $item["qty"]?></medium></p>
+                                <form style="" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                                    <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
+                                    <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
+                                    <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
+
+                                    <button type="submit" style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 25%; font-size: 0.9em;"name="add" class="redirect_button">+</button>
+                                    <button type="submit" style="padding: 1%; background-color: rgb(203, 68, 75); color: #FFFFFF; border: 0px; border-radius: 25%; font-size: 0.9rem;"name="removeone" class="redirect_button">-</button>
+
+                                </form>
                             </div>
                         </div> 
                         <div class="col-md-2 card-body">
@@ -153,7 +195,7 @@ session_start();
                                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
                                     <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
                                     
-                                    <button type="submit" style="padding: 2%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;"name="delete" class="redirect_button" onclick="return confirm('Are you sure you want to remove this product from your cart?')">Remove From Cart</button>
+                                    <button type="submit" style="padding: 2%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;"name="delete" class="redirect_button">Remove From Cart</button>
                                 </form>
                             </div>
                         </div>

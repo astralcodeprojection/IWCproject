@@ -1,5 +1,8 @@
 <?php
+// start the session
 session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,8 +10,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Order Confirmation - Sustain Jewelry Co.</title>
-    <meta name="description" content="Order Confirmation">
+    <title>Cart - Sustain Jewelry Co.</title>
+    <meta name="description" content="View your cart, and checkout the items you've selected from Sustain Jewelry.">
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT1YS7DNDD"></script>
@@ -27,56 +30,134 @@ session_start();
 <body class="">
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
+    <div class="container">
+        <div class="row text-center">
+            
+        <h2 class="display-3 fw-bold">Confirm Order</h2>
+        <div class="heading-line mb-1"></div>
+        </div>
+            <br><br>
 
-    <?php 
-    require_once("connect-db.php");
-    $error = $success = $productId = $name = $email = $userId = $firstName = $lastName = $address = $state = $city = $qty = $total = $newsletter = $shipping = $payMethod = "";
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $productId = $_POST["productId"];
-        $userId = $_POST["userId"];
-        $qty = $_POST["qty"];
-
-        $sql="insert into orders (userId, productId, name, email, firstName, lastName, address, state, city, qty, total, newsletter, shipping, payMethod) VALUES (:userId, :productId, :name, :email, :firstName, :lastName, :address, :state, :city, :qty, :total, :newsletter, :shipping, :payMethod)";
-
-        $statement1 = $db->prepare($sql);
-
-
-        $statement1->bindValue(':userId', $userId);
-        $statement1->bindValue(':productId', $productId);
-        $statement1->bindValue(':name', $name);
-        $statement1->bindValue(':email', $email);
-        $statement1->bindValue(':firstName', $firstName);
-        $statement1->bindValue(':lastName', $lastName);
-        $statement1->bindValue(':address', $address);
-        $statement1->bindValue(':state', $state);
-        $statement1->bindValue(':city', $city);
-        $statement1->bindValue(':qty', $qty);
-        $statement1->bindValue(':total', $total);
-        $statement1->bindValue(':newsletter', $newsletter);
-        $statement1->bindValue(':shipping', $shipping);
-        $statement1->bindValue(':payMethod', $payMethod);
-
-        if($statement1->execute()){
-            $statement1->closeCursor();
-            $success = "Order Successful.";
-         }else{
-            $error="Error entering order.";
-        };
+    <!-- START THE DESCRIPTION CONTENT  -->
     
-    
-    
-                if($error !=""){
-                    echo "<h3>$error</h3>";
+                
+
+        <?php
+            
+            require_once("connect-db.php");
+
+            /* grab all cart items */
+            if($_SESSION["logged_in"] != "true"){
+                    $error1 = "";
+
+                    $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = '999999%'";
+                
+                    $statement1 = $db->prepare($sql);
+                
+                    if($statement1->execute()){
+                        $items = $statement1->fetchAll();
+                        $statement1->closeCursor();
+                    }else{
+                        $error1= "Error finding cart.";
+                    }
+            }else {
+
+                $userId = $_SESSION["userId"];
+            
+            
+                $error1 = "";
+
+                $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = :userId";
+            
+                $statement1 = $db->prepare($sql);
+                $statement1 -> bindValue(':userId' , $userId);
+                
+            
+                if($statement1->execute()){
+                    $items = $statement1->fetchAll();
+                    $statement1->closeCursor();
                 }else{
-                    echo "<h3>$success</h3>";
-                    
+                    $error1= "Error finding cart.";
                 }
+            }
+                    
                 
-        }//end of post
         ?>
+            <h3>Cart Contents</h3>
                 
-    
+                
+            <?php
+            if(count($items) == 0){
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>You do not have any items in your cart. <a href="collections.php" style="color: blue">Browse our inventory</a></p>
+                    </div>
+                </div>
+                <?php
+            }
+                foreach($items as $item){?>
+            
+                
+            <div class="row">
+                
+                <div class="card w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 text-center">
+                            <img src="<?php echo $item["img"]?>" class="img-fluid rounded-start" style="max-height: 15rem" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $item["name"]?></h5>
+                                <p class="card-text"><?php echo $item["description"]?></p>
+                                <p class="card-text"><medium class="text-muted">Price: $<?php echo $item["price"]?></medium></p>
+                                <p class="card-text"><medium class="text-muted">Quantity: <?php echo $item["qty"]?></medium></p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>  
+            </div>
+            <a href="cart.php" style="color: blue; text-align: center"><p>Change items</p></a>
+            <br>
+            <?php } ?>        
+                   
+            <?php
+                $totalPrice = 0;
+                foreach($items as $item){
+                    $totalPrice += ($item["qty"] * $item["price"]);
+                }
+                $highestOrderSQL = "select MAX(siteOrderId) from orders"; //move this to when they actually place the order
+                $highestOrderStatement = $db->prepare($highestOrderSQL);
+                
+                if($highestOrderStatement->execute()){
+                    $highestOrders = $highestOrderStatement->fetchAll();
+                    $highestOrderStatement->closeCursor();
+                }
+                $newOrderId = 0;
+                foreach($highestOrders as $order){
+                    foreach($order as $max){
+                        $newOrderId = $max;
+                    }
+                }
+                $newOrderId += 1;
+            ?>
 
+            <article>
+                <form action="shipping.php" method="post">
+                    <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
+                    <input type="hidden" name="items" value="<?php echo $items?>">
+                    <input type="hidden" name="total" value="<?php echo $totalPrice?>">
+                    <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $totalPrice?></p>
+                    <div style="text-align: center; margin: 2%;">
+                        <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Proceed to Shipping</button>
+                    </div>
+                </form>
+                
+                </div>
+            </article>
+            </div>
+        </div>
+    </div>
 </body>
 <?php include("navfooter.php");?>
 
