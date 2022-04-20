@@ -27,51 +27,119 @@ session_start();
 <body class="">
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
-
-    <br><br>
     <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-9">
-            <h2>Sustain Jewelry<br>
-            Company's Story</h2><br><br>
-
-        </div>
-        
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-9">
-            <h3>Our goal is to create a safe, healthy and sustainable line<br>of products for our people and communities.</h3><br>
-            <p> Sustain jewelry company started from noticing many brands that were selling hazardous<br>
-                 jewelry and wanting to make changes in the industry by creating a brand that<br>
-                 will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
-                 make sure the metals we use to handcraft into our jewelry will have a small<br>
-                 impact on earth. To make sure of this, 90% of our base metals will be recycled.<br>
-                 Our goal is to create a safe, healthy and sustainable world for our people and<br>
-                 communities.</p><br><br>
+      <div class="col-md-0"></div>
+      <div class="col-md-11">
             
+            <div class="storyContent">
+              <div class="row">
+                <div class="col-md-6">
+                    <img class="col-md-12" src="img/image29-103.png">
+                </div>
+                <div class="col-md-6">
+                    <br><br>
+                    <h2>Sustain's Story</h2><br>
+                    <h3>Our goal is to create a safe, healthy and sustainable line<br>of products for our people and communities.</h3><br>
+                    <p> Sustain jewelry company started from noticing many brands that were selling hazardous
+                        jewelry and wanting to make changes in the industry by creating a brand that
+                        will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
+                        make sure the metals we use to handcraft into our jewelry will have a small
+                        impact on earth. To make sure of this, 90% of our base metals will be recycled.</p>
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+      </div>
+      <div class="col-md-1"></div>
+      
+    </div>
+    <div class="aboutSection bg-warning">
+        <div class="row bg-warning">
+                <div class="col-md-3"></div>
+                <div class="col-md-7">
+                    <br><br>
+                    <h2>How Sustain stays sustainable</h2>
+                    <br><br>
+
+                </div>
+                <div class="col-md-2"></div>
+
         </div>
+        <div class="row bg-warning">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>  
+                        <div class="col-md-9">
+                            <br>
+                            <img class="col-md-7" src="img/white recycling.png">
+                        </div>
+                    </div>      
+                    <br>
+                    <div class="row">  
+                        <div class="col-md-12">
+                            <h3 class="text-center">100% Recycled Materials</h3>
+                            <p class="text-center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                        </div>
+                        <div class="col-md-0">
+                        </div>  
+                    </div> 
+                    
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>  
+                        <div class="col-md-9">
+                            <br>
+                            <img class="col-md-7" src="img/Earth Eco.png">
+                        </div>
+                    </div>      
+                    <br>
+                    <h3 class="text-center">Carbon Neutral Manufacturing</h3>
+                    <p class="text-center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
+                <div class="col-md-1">
+            </div>
+        </div>
+       
     </div>
     <div class="row">
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-4">
                 
                 <br><br>
-                <img src="img/worker.jpg" class="col-md-8">
-                <h2>About our<br>Practices</h2>
+                <img src="img/aboutUs.png" class="col-md-12">
+                <h2><br>About Us<br></h2>
                 <a class="" href="aboutUs.php">
-                    
                     <button type="button"  class="btn btn-secondary">About Our Practices</button>
                 </a>
                 
             </div>
+            <div class="col-md-2"></div>
             <div class="col-md-4">
                 
-                <img src="img/Copper-Ore-Direct-From-Mine.jpg" class="col-md-7">
+                <img src="img/Copper-Ore-Direct-From-Mine.jpg" class="col-md-9">
                 <h2>View our <br>materials<br>information</h2>
                 
                 <a class="" href="materials.php">
@@ -79,10 +147,10 @@ session_start();
                     <button type="button"  class="btn btn-secondary">Our Materials</button>
                 </a>
             </div>
-            <div class="col-md-1"></div>
 
         </div>
         <br><br>
+    
     
 
 </body>

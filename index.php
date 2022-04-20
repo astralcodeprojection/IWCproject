@@ -35,12 +35,12 @@ session_start();
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/New Mothers Day Image.jpg" class="d-block w-100" alt="wood jewelry">
+                                <img src="img/MicrosoftTeams-image (7).png" class="d-block w-100" alt="site banner">
                             </div>
                             <div class="carousel-item">
                                 <img src="img/siteHeader.jpg" class="d-block w-100" alt="site banner">
                             </div> 
-                        </div>
+                           
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -49,63 +49,119 @@ session_start();
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                        
                     </div>
                 </div>
     <section id="home" class="homepage">
         
         <div class="container">
-            <h2 class="display-4 fw-bold">Current Specials:</h2>
+            <h2 class="display-4 fw-bold">Mothers' Day Specials:</h2>
              <br>
-            <div class="row cardComponent">
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/tortoisglasswrap.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Tortoise Shell Glass Wrap Bracelet</h5>
-                                <h5 class="card-title text-decoration-line-through">45.99</h5>
-                                <h5 class="card-title">35.99 </h5>
-                                <p class="card-text">Sterling silver, featuring green semi-precious stone beads and
-                                     other mixed metals wrapped in four stands of stretch cord.</p>
-                                <form action="productDetails.php" method="post">
-                                    <input type="hidden" name="productId" value="7">
-                                    <button class="btn btn-secondary" type="submit">Details</button>
-                                </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row cardComponent">
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="img/tortoisglasswrap.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Tortoise Shell Glass Wrap Bracelet</h5>
+                                        <h5 class="card-title text-decoration-line-through">$45.99</h5>
+                                        <h5 class="card-title">$35.99 </h5>
+                                        <p class="card-text">Sterling silver, featuring green semi-precious stone beads and
+                                            other mixed metals wrapped in four stands of stretch cord.</p>
+                                        <form action="productDetails.php" method="post" class="mt-auto">
+                                            <input type="hidden" name="productId" value="7">
+                                            <button class="btn btn-secondary" type="submit">Details</button>
+                                        </form>
+                                    </div>
                             </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="img/embossedringset.png" class="card-img-top" alt="...">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Mother Daughter<br>Ring Set
+                                        </h5>
+                                        <h5 class="card-title text-decoration-line-through">$28.99</h5>
+                                        <h5 class="card-title">$25.99 </h5>
+                                        <p class="card-text">A set of matching gold and steel cast rings sourced 
+                                            from remelted metals. Embossed floral patterns are featured on both, 
+                                            great for sharing with a friend as a gift and stylish on any occasion.</p>
+                                        <form action="productDetails.php" method="post" class="mt-auto">
+                                            <input type="hidden" name="productId" value="23">
+                                            <button class="btn btn-secondary" type="submit">Details</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="img/naturalbrassring.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Natural Brass Ring</h5>
+                                        <h5 class="card-title text-decoration-line-through">$35.99</h5>
+                                        <h5 class="card-title">$29.99 </h5>
+                                        <p class="card-text">A natural brass that was hand cut and polished using traditional methods.
+                                            Choose this for a natural yet refined look.</p>
+                                        <form action="productDetails.php" method="post" class="mt-auto">
+                                            <input type="hidden" name="productId" value="59">
+                                            <button class="btn btn-secondary" type="submit">Details</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                <br>
+                <div class="row cardComponent">
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/ovalshortearrings.png" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Dangled Oval Short Earrings</h5>
+                                    <h5 class="card-title text-decoration-line-through">$24.99</h5>
+                                    <h5 class="card-title">$21.99</h5>
+                                    <p class="card-text">Brass plates hung by sterling silver ear wires. Light and comfortable for any occasion you are attending.</p>
+                                    <form action="productDetails.php" method="post" class="mt-auto">
+                                        <input type="hidden" name="productId" value="41">
+                                        <button class="btn btn-secondary" type="submit">Details</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/spiralmineralring.png" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Spiral Mineral Ring</h5>
+                                    <h5 class="card-title text-decoration-line-through">$31.99</h5>
+                                    <h5 class="card-title">$25.99 </h5>
+                                    <p class="card-text">A stylish smooth natural abstract spiral design perfect for upscale events as an 
+                                        intriguing accessory. The polished mineral design creates a comfortable and easy to wear feeling.</p>
+                                    <form action="productDetails.php" method="post" class="mt-auto">
+                                        <input type="hidden" name="productId" value="24">
+                                        <button class="btn btn-secondary" type="submit">Details</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/earthmineralnecklace.png" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Earth Tone Mineral Necklace</h5>
+                                    <h5 class="card-title text-decoration-line-through">$24.99</h5>
+                                    <h5 class="card-title">$19.99 </h5>
+                                    <p class="card-text">A waxed hemp cord interior with shaped and polished minerals to create a stylish design perfect for casual wear.</p>
+                                    <form action="productDetails.php" method="post" class="mt-auto">
+                                        <input type="hidden" name="productId" value="29">
+                                        <button class="btn btn-secondary" type="submit">Details</button>
+                                    </form>
+                                </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/blktexturedoreearrings.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Black Textured Mineral Ore Earrings</h5>
-                                <h5 class="card-title text-decoration-line-through">12.99</h5>
-                                <h5 class="card-title">7.99 </h5>
-                                <p class="card-text">Black metal frames with mineral ore disk inserts.
-                                     Mineral ore is textured for a natural look perfect for casual wear.</p>
-                                <form action="productDetails.php" method="post">
-                                    <input type="hidden" name="productId" value="71">
-                                    <button class="btn btn-secondary" type="submit">Details</button>
-                                </form>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/naturalbrassring.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Natural Brass Ring</h5>
-                                <h5 class="card-title text-decoration-line-through">35.99</h5>
-                                <h5 class="card-title">29.99 </h5>
-                                <p class="card-text">A natural brass that was hand cut and polished using traditional methods.
-                                     Choose this for a natural yet refined look.</p>
-                                <form action="productDetails.php" method="post">
-                                    <input type="hidden" name="productId" value="59">
-                                    <button class="btn btn-secondary" type="submit">Details</button>
-                                </form>
-                            </div>
-                    </div>
-                </div>
-            </div>
+             </div>
             <br><br>
             
         </div>
@@ -126,7 +182,8 @@ session_start();
                     <div class="col-md-5"></div>
                     <div class="col-md-3">
                         <a class="" href="ourStory.php">
-                            <button type="button"  class="btn btn-primary">Our Mission</button>
+                            <br>
+                            <button type="button"  class="btn btn-primary">About Us</button>
                         </a>
                     </div>
                     <div class="col-md-4"></div>

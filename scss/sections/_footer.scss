@@ -1,4 +1,4 @@
-@use '../custom' as *;
+@use '../custom'as *;
 
 
 .footer {
@@ -8,7 +8,6 @@
 
 
 
-// STYLE THE CAMPANY INFO CONTENT 
 .company-list {
     display: block;
     list-style-type: none;
@@ -29,14 +28,13 @@
     }
 }
 
-// STYLE THE COPYRIGHT  CONTENT 
 .footer-bottom {
     background-color: $black;
 
     &__copyright {
         color: $gray-600;
         font-weight: 400;
-        
+
 
         a {
             color: $gray-300;
@@ -45,7 +43,7 @@
             &:hover {
                 color: $primary;
                 text-decoration: underline;
-             
+
             }
         }
     }

@@ -64,13 +64,13 @@ $userId = 99999;
                                     <div class="" >
                                         <div class="card" style="width: 18rem;">
                                             <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
-                                            <div class="card-body">
+                                            <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title"><?php echo $c["name"];?></h5>
                                                 <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
                                                 <p class="card-text"><?php echo $c["description"];?></p>
-                                                <form action="productDetails.php" method="post">
+                                                <form action="productDetails.php" method="post" class="mt-auto">
                                                     <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">
-                                                    <button class="btn btn-primary" type="submit">Details</button>
+                                                    <button class="btn btn-secondary" type="submit">Details</button>
                                                 </form>
                                             </div>
                                         </div>

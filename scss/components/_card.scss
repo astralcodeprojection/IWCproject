@@ -6,16 +6,28 @@
     flex-wrap: wrap;
     flex: 1 1 160px;
 
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button.btn {
+        margin-top: auto;
+    }
+
     .card {
         border-radius: 5px;
         margin-bottom: 20px;
         margin-left: 10px;
         margin-right: 10px;
+        max-height: 520px;
+        min-height: 520px;
     }
 
     .card-img-top {
         max-width: 18rem;
-        max-height: 10rem;
+        max-height: 13rem;
+        min-height: 11rem;
     }
 
 }

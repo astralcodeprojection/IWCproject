@@ -108,7 +108,7 @@ session_start();
                         
                       <?php } ?>
 
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Add To Bag">
 
                       </form>
            

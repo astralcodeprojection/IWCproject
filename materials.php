@@ -49,9 +49,7 @@ session_start();
                  jewelry and wanting to make changes in the industry by creating a brand that<br>
                  will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
                  make sure the metals we use to handcraft into our jewelry will have a small<br>
-                 impact on earth. To make sure of this, 90% of our base metals will be recycled.<br>
-                 Our goal is to create a safe, healthy and sustainable world for our people and<br>
-                 communities.</p><br><br>
+                 impact on earth. To make sure of this, 90% of our base metals will be recycled.</p><br><br>
             
         </div>
     </div>
