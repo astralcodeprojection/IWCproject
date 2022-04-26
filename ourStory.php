@@ -40,11 +40,10 @@ session_start();
                     <br><br>
                     <h2>Sustain's Story</h2><br>
                     <h3>Our goal is to create a safe, healthy and sustainable line<br>of products for our people and communities.</h3><br>
-                    <p> Sustain jewelry company started from noticing many brands that were selling hazardous
-                        jewelry and wanting to make changes in the industry by creating a brand that
-                        will reduce the carbon footprint and make the world a cleaner place. <br><br>We will
-                        make sure the metals we use to handcraft into our jewelry will have a small
-                        impact on earth. To make sure of this, 90% of our base metals will be recycled.</p>
+                    <p> Sustain jewelry company started from noticing many brands that were selling hazardous jewelry and wanting to
+                         make a change in the industry by creating a brand that will reduce the carbon footprint and make the world a
+                         cleaner place. We are looking to offer a line of jewelry that is sustainable for people that are environmentally
+                         conscious and make it easily available via a customer friendly e-commerce experience.</p>
                 </div>
               </div>
               
@@ -83,17 +82,13 @@ session_start();
                     <div class="row">  
                         <div class="col-md-12">
                             <h3 class="text-center">100% Recycled Materials</h3>
-                            <p class="text-center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                            <p class="text-center">
+                            Our precious metals and gemstones are from post consumer sources, 
+                            making them 100% recycled. Now they have been handmade
+                            into our beautiful collection of sustain Jewelry, that is great
+                            for gift giving and simple pleasures to look at and live in everyday.
                     </p>
                         </div>
-                        <div class="col-md-0">
-                        </div>  
                     </div> 
                     
                 </div>
@@ -110,13 +105,9 @@ session_start();
                     </div>      
                     <br>
                     <h3 class="text-center">Carbon Neutral Manufacturing</h3>
-                    <p class="text-center">lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    <p class="text-center">Our sourcing allows for a lesser emissions and
+                    a sustainable product every time. We include products that produce around
+                    14% less of the emissions that traditional mining does.
                     </p>
                 </div>
                 <div class="col-md-1">
@@ -125,28 +116,28 @@ session_start();
        
     </div>
     <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
             <div class="col-md-4">
                 
                 <br><br>
                 <img src="img/aboutUs.png" class="col-md-12">
-                <h2><br>About Us<br></h2>
+                <h2><br>About Sustain<br> Jewelry<br>Company</h2>
                 <a class="" href="aboutUs.php">
-                    <button type="button"  class="btn btn-secondary">About Our Practices</button>
+                    <button type="button"  class="btn btn-secondary">About Us</button>
                 </a>
                 
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-4">
+                 <br><br>
+                <img src="img/ourMaterials.jpg" class="col-md-9">
+                <h2><br>View our <br>materials<br>information</h2>
                 
-                <img src="img/Copper-Ore-Direct-From-Mine.jpg" class="col-md-9">
-                <h2>View our <br>materials<br>information</h2>
-                
-                <a class="" href="materials.php">
-                    
+                <a class="" href="materials.php"> 
                     <button type="button"  class="btn btn-secondary">Our Materials</button>
                 </a>
             </div>
+            <div class="col-md-1"></div>
 
         </div>
         <br><br>

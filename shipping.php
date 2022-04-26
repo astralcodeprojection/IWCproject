@@ -29,11 +29,16 @@ session_start();
     <?php include("nav.html");?>
 
     <?php
+        require_once("connect-db.php");
         if(isset($_POST["items"])){
             //items here
             $items = $_POST["items"];
+            $allItems = implode(',', $items);
+            $orderId = $_POST["orderId"];
             $userId = $_POST["userId"];
-            $totalPrice = $_POST["total"];
+            $productId = $_POST["productId"];
+            $total = $_POST["total"];
+            $qty = $_POST["qty"];
         } else{
             //redirect cart
             header('Location:cart.php');
@@ -45,7 +50,9 @@ session_start();
             $customerSQL = "select * from users WHERE userId = :userId";
         
             $customerStatement = $db->prepare($customerSQL);
-            $customerStatement -> bindValue(':userId' , $userId);
+            $customerStatement -> bindValue(':userId', $userId);
+            $customerStatement -> bindValue(':firstName', $firstName);
+            $customerStatement -> bindValue(':lastName', $lastName);
             
         
             if($customerStatement->execute()){
@@ -70,10 +77,10 @@ session_start();
         <form action="payment.php" method="POST">
             <div class="row">
                 <div class="col">
-                    <input name="fname" type="text" class="form-control" placeholder="First name" aria-label="First name" value="<?php echo $thisCustomer["firstName"]?>">
+                    <input name="firstName" type="text" class="form-control" placeholder="First name" aria-label="First name" value="<?php echo $thisCustomer["firstName"]?>">
                 </div>
                 <div class="col">
-                    <input name="lastname" type="text" class="form-control" placeholder="Last name" aria-label = "Last name" value="<?php echo $thisCustomer["lastName"]?>">
+                    <input name="lastName" type="text" class="form-control" placeholder="Last name" aria-label="Last name" value="<?php echo $thisCustomer["lastName"]?>">
                 </div>
             </div>
             <div class="row">
@@ -86,10 +93,10 @@ session_start();
             </div>
             <div class="row">
                 <div class="col">
-                    <input name="zip" type="text" class="form-control" placeholder="XXXXX" aria-label="Zip Code" value="<?php echo $thisCustomer["zip"]?>">
+                    <input name="zip" type="number" class="form-control" placeholder="XXXXX" aria-label="Zip Code" value="<?php echo $thisCustomer["zip"]?>">
                 </div>
                 <div class="col">
-                    <select name="state" class="form-select" placeholder="State" aria-label="State" value="<?php echo $thisCustomer["state"]?>">
+                    <select name="state" type="text" class="form-select" placeholder="State" aria-label="State" value="<?php echo $thisCustomer["state"]?>">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -141,18 +148,20 @@ session_start();
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
+
+                    
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="shipping" id="exampleRadios1" value="standard" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Standard Shipping
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="shipping" id="exampleRadios2" value="express">
                     <label class="form-check-label" for="exampleRadios2">
                         Express Shipping
                     </label>
@@ -161,13 +170,18 @@ session_start();
             </div>
             
             <input type="hidden" name="userId" value="<?php echo $userId?>">
-            <input type="hidden" name="items" value="<?php echo $items?>">
-            <input type="hidden" name="total" value="<?php echo $totalPrice?>">
-        </form>
-            <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $totalPrice?></p>
+            <input type="hidden" name="items" value="<?php echo $allItems?>">
+            <input type="hidden" name="total" value="<?php echo $total?>">
+            <input type="hidden" name="qty" value="<?php echo $qty?>">
+            
+         
+
+            <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
             <div style="text-align: center; margin: 2%;">
                 <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Proceed to Payment</button>
-        </div>
+            </div>
+        </form>
+            
             
         </div>
     </div>

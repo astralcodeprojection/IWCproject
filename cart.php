@@ -2,7 +2,6 @@
 // start the session
 session_start();
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,7 +79,7 @@ session_start();
                     $add->closeCursor();
                     $success3 = "Success adding one product.";
                 } else{
-                    $error3 = "Error addign one product.";
+                    $error3 = "Error adding one product.";
                 }
             }elseif(isset($_POST['removeone'])){
                 $productId = $_POST["productId"];
@@ -177,7 +176,7 @@ session_start();
                                 <p class="card-text"><?php echo $item["description"]?></p>
                                 <p class="card-text"><medium class="text-muted">Price: $<?php echo $item["price"]?></medium></p>
                                 <p class="card-text"><medium class="text-muted">Quantity: <?php echo $item["qty"]?></medium></p>
-                                <form style="" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                                <form style="" method="POST" action="confirmOrder.php">
                                     <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
                                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
                                     <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
@@ -197,6 +196,7 @@ session_start();
                                     
                                     <button type="submit" style="padding: 2%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;"name="delete" class="redirect_button">Remove From Cart</button>
                                 </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -213,8 +213,12 @@ session_start();
                     <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
                     <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
-                <button type="submit">Checkout</button>
+
+
+
+                <button type="submit" style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 25%; font-size: 0.9em;">Checkout</button>
                 </form>
+                <br><br>
                 </div>
             </article>
             </div>

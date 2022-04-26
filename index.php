@@ -32,13 +32,18 @@ session_start();
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/MicrosoftTeams-image (7).png" class="d-block w-100" alt="site banner">
+                                <img src="img/yellowCarouselImg.jpg" class="d-block w-100" alt="site banner">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/siteHeader.jpg" class="d-block w-100" alt="site banner">
+                                <img src="img/carouselImageTwo.jpg" class="d-block w-100" alt="site banner">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/carouselThree.jpg" class="d-block w-100" alt="site banner">
                             </div> 
                            
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -52,6 +57,11 @@ session_start();
                         
                     </div>
                 </div>
+        <section id="midPageSection" class="midPageSection bg-warning">
+        
+        
+        
+    </section>
     <section id="home" class="homepage">
         
         <div class="container">
@@ -165,55 +175,13 @@ session_start();
             <br><br>
             
         </div>
-        <br><br><br><br>
+        <br><br>
         
     </section>
-    <section id="midPageSection" class="midPageSection bg-warning">
-        <br>
-        <div class="row">
-            <h2 class="text-center">About Us</h2>
-            <div class="col-md-6">
-                <h3 class="text-center">Sustain is dedicated to</h3>
-                <h3 class="text-center">reaching the perfect</h3>
-                <h3 class="text-center">balance of price,</h3>
-                <h3 class="text-center">quality, and</h3>
-                <h3 class="text-center">sustainability.</h3>
-                <div class="row justify-content-sm-center">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
-                        <a class="" href="ourStory.php">
-                            <br>
-                            <button type="button"  class="btn btn-primary">About Us</button>
-                        </a>
-                    </div>
-                    <div class="col-md-4"></div>
-                    
-                </div>
-                
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-center">Here you can learn</h3>
-                <h3 class="text-center">about where our</h3>
-                <h3 class="text-center">jewelry comes from</h3>
-                <h3 class="text-center">and how it is</h3>
-                <h3 class="text-center">manufactured from our</h3>
-                <h3 class="text-center">sustainable sources.</h3>
-                <div class="row justify-content-sm-center">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
-                        <a class="" href="materials.php">
-                            <button type="button"  class="btn btn-primary">Our Materials</button>
-                        </a>
-                    </div>
-                    <div class="col-md-4"></div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+
     
    
-            <br><br><br><br><br>
+            <br><br>
 
 </body>
 <?php include("navfooter.php");?>

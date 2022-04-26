@@ -14,12 +14,14 @@ session_start();
             $userId = $_POST["userId"];
             $productId = $_POST["productId"];
             $total = $_POST["total"];
-            $qty = $_POST["qty"];
             $firstName = $_POST["firstName"];
             $lastName = $_POST["lastName"];
             $address = $_POST["address"];
             $city = $_POST["city"];
             $state = $_POST["state"];
+            $card = $_POST["card"];
+            $cvc = $_POST["cvc"];
+            $cardName = $_POST["cardName"];
             $zip = $_POST["zip"];
             
         } else{
@@ -33,13 +35,11 @@ session_start();
             $customerSQL = "select * from users WHERE userId = :userId";
         
             $customerStatement = $db->prepare($customerSQL);
+            $customerStatement -> bindValue(':items', $items);
             $customerStatement -> bindValue(':userId', $userId);
-            $customerStatement -> bindValue(':email', $email);
-            $customerStatement -> bindValue(':firstName', $firstName);
-            $customerStatement -> bindValue(':lastName', $lastName);
-            $customerStatement -> bindValue(':address', $address);
-            $customerStatement -> bindValue(':state', $state);
-            $customerStatement -> bindValue(':city', $city);
+            $customerStatement -> bindValue(':total', $totalPrice);
+
+            
             
         
             if($customerStatement->execute()){
@@ -86,35 +86,39 @@ session_start();
             <h2 class="display-3 fw-bold">Payment Method</h2>
             <div class="heading-line mb-1"></div>
         </div>
-        <form action="newsletter.php" method="POST">
+        <form action="finalizePayment.php" method="POST">
             <div class="row">
                 <div class="col">
-                    <input name="card" type="number" class="form-control" placeholder="Card Info" aria-label="First name">
-                </div>
-                <div class="col">
-                    <input name="cvc" type="number" class="form-control" placeholder="CVV" aria-label="CVV">
-                </div>
-                <div class="col">
-                    <input name="cardName" type="text" class="form-control" placeholder="Card Name" aria-label="Card Name">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="newsletter" id="exampleRadios1" value="yes" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Subscribe
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="newsletter" id="exampleRadios2" value="no">
+                    <label class="form-check-label" for="exampleRadios2">
+                        No thanks
+                    </label>
+                    </div>
                 </div>
             </div>
-            
-            <input type="hidden" name="items[]" value="<?php echo $items?>">
+            <input type="hidden" name="items" value="<?php echo $allItems?>">
             <input type="hidden" name="userId" value="<?php echo $userId?>">
             <input type="hidden" name="total" value="<?php echo $total?>">
-            <input type="hidden" name="email" value="<?php echo $email?>">
             <input type="hidden" name="firstName" value="<?php echo $firstName?>">
             <input type="hidden" name="lastName" value="<?php echo $lastName?>">
             <input type="hidden" name="address" value="<?php echo $address?>">
             <input type="hidden" name="city" value="<?php echo $city?>">
             <input type="hidden" name="state" value="<?php echo $state?>">
-            <input type="hidden" name="qty" value="<?php echo $qty?>">
+            <input type="hidden" name="items" value="<?php echo $items?>">
             <input type="hidden" name="total" value="<?php echo $total?>">
+            <input type="hidden" name="card" value="<?php echo $card?>">
+            <input type="hidden" name="cvc" value="<?php echo $cvc?>">
+            <input type="hidden" name="cardName" value="<?php echo $cardName?>">
             <input type="hidden" name="zip" value="<?php echo $zip?>">
 
 
-
-            <input type="hidden" name="total" value="<?php echo $total?>">
             <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
             <div style="text-align: center; margin: 2%;">
                 <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Finalize</button>

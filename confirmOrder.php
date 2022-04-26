@@ -50,6 +50,8 @@ session_start();
             if($_SESSION["logged_in"] != "true"){
                     $error1 = "";
 
+                    
+
                     $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = '999999%'";
                 
                     $statement1 = $db->prepare($sql);
@@ -70,7 +72,7 @@ session_start();
                 $sql = "select * from cart join products on products.productId = cart.productId WHERE userId = :userId";
             
                 $statement1 = $db->prepare($sql);
-                $statement1 -> bindValue(':userId' , $userId);
+                $statement1 -> bindValue(':userId', $userId);
                 
             
                 if($statement1->execute()){
@@ -122,9 +124,9 @@ session_start();
             <?php } ?>        
                    
             <?php
-                $totalPrice = 0;
+                $total = 0.00;
                 foreach($items as $item){
-                    $totalPrice += ($item["qty"] * $item["price"]);
+                    $total += ($item["qty"] * $item["price"]);
                 }
                 $highestOrderSQL = "select MAX(siteOrderId) from orders"; //move this to when they actually place the order
                 $highestOrderStatement = $db->prepare($highestOrderSQL);
@@ -137,7 +139,7 @@ session_start();
                 foreach($highestOrders as $order){
                     foreach($order as $max){
                         $newOrderId = $max;
-                    }
+                    } 
                 }
                 $newOrderId += 1;
             ?>
@@ -145,9 +147,18 @@ session_start();
             <article>
                 <form action="shipping.php" method="post">
                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
-                    <input type="hidden" name="items" value="<?php echo $items?>">
-                    <input type="hidden" name="total" value="<?php echo $totalPrice?>">
-                    <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $totalPrice?></p>
+                    <input type="hidden" name="items[]" value="<?php 
+                    
+                    foreach($items as $item){
+                        echo $item["name"]
+                }
+                    
+                    
+                    
+                    ?>">
+                    <input type="hidden" name="total" value="<?php echo $total?>">
+                    <input type="hidden" name="qty" value="<?php echo $qty?>">
+                    <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
                     <div style="text-align: center; margin: 2%;">
                         <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Proceed to Shipping</button>
                     </div>
