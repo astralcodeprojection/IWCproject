@@ -147,15 +147,7 @@ session_start();
             <article>
                 <form action="shipping.php" method="post">
                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
-                    <input type="hidden" name="items[]" value="<?php 
-                    
-                    foreach($items as $item){
-                        echo $item["name"]
-                }
-                    
-                    
-                    
-                    ?>">
+                    <input type="hidden" name="items[]" value="<?php echo $total?>">
                     <input type="hidden" name="total" value="<?php echo $total?>">
                     <input type="hidden" name="qty" value="<?php echo $qty?>">
                     <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
