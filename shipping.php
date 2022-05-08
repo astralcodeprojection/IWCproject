@@ -152,23 +152,24 @@ session_start();
                     
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="shipping" id="exampleRadios1" value="standard" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Standard Shipping
-                    </label>
-                    </div>
+            <div class="shippingSelection">
+                <div class="row">
+                    <div class="col">
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="shipping" id="exampleRadios2" value="express">
-                    <label class="form-check-label" for="exampleRadios2">
-                        Express Shipping
-                    </label>
+                        <input class="form-check-input bg-warning" type="radio" name="shipping" id="exampleRadios1" value="standard" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Standard Shipping
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input bg-warning" type="radio" name="shipping" id="exampleRadios2" value="express">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Express Shipping
+                        </label>
+                        </div>
                     </div>
                 </div>
             </div>
-            
             <input type="hidden" name="userId" value="<?php echo $userId?>">
             <input type="hidden" name="items" value="<?php echo $allItems?>">
             <input type="hidden" name="total" value="<?php echo $total?>">

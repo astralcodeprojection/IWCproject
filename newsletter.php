@@ -83,20 +83,21 @@ session_start();
 
     <div class="container">
         <div class="row text-center">
-            <h2 class="display-3 fw-bold">Newsletter</h2>
+            <h2 class="display-3 fw-bold">Thank You!</h2>
             <div class="heading-line mb-1"></div>
         </div>
         <form action="finalizePayment.php" method="POST">
+            <h4>Would you like a copy of our newsletter monthly?</h4>
             <div class="row">
                 <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="newsletter" id="exampleRadios1" value="yes" checked>
+                    <input class="form-check-input bg-warning" type="radio" name="newsletter" id="exampleRadios1" value="yes" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         Subscribe
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="newsletter" id="exampleRadios2" value="no">
+                    <input class="form-check-input bg-warning" type="radio" name="newsletter" id="exampleRadios2" value="no">
                     <label class="form-check-label" for="exampleRadios2">
                         No thanks
                     </label>

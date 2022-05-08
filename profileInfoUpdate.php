@@ -57,28 +57,33 @@ if($_SESSION["logged_in"] != "true"){
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     <div class="col-md-12">
-        
-        <article class="left">
-
+       
+        <article class="container">
             <form method="POST" action="profileUpdateProcessing.php">
                 <?php foreach($customers as $c) :?>
-                    Username: <input type="text" name="username" required value="<?php echo $c["username"];?>">
-                    <br><br>
-                    Email: <input type="email" name="email" required value="<?php echo $c["email"];?>">
-                    <br><br>
-                    First Name: <input type="text" name="firstName" required value="<?php echo $c["firstName"];?>">
-                    <br><br>
-                    Last Name: <input type="text" name="lastName" required value="<?php echo $c["lastName"];?>">
-                    <br><br>
-                    Address: <input type="text" name="address" required value="<?php echo $c["address"];?>">
-                    <br><br>
-                    State: <input type="text" name="state" required value="<?php echo $c["state"];?>">
-                    <br><br>
-                    City: <input type="text" name="city" required value="<?php echo $c["city"];?>">
-                    <br><br>
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" required value="<?php echo $c["email"];?>"><br>
+                    <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required value="<?php echo $c["username"];?>"><br>
+                    <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" ><br>
+                    <input name="firstName" type="text" class="form-control" placeholder="First Name" aria-label="First Name" required value="<?php echo $c["firstName"];?>"><br>
+                    <input name="lastName" type="text" class="form-control" placeholder="Last Name" aria-label="Last name" required value="<?php echo $c["lastName"];?>"><br>
+                    <input name="address" type="text" class="form-control" placeholder="Address" aria-label="Address" required value="<?php echo $c["address"];?>"><br>
+                    <input name="state" type="text" class="form-control" placeholder="State" aria-label="State" required value="<?php echo $c["state"];?>"><br>
+                    <input name="city" type="text" class="form-control" placeholder="City" aria-label="City" required value="<?php echo $c["city"];?>">
                     <input type="hidden" name="userId" value="<?php echo $c["userId"];?>">
-                <?php endforeach;?>
-                <input type="submit" value="Submit">
+                </div>
+                <div class="col">
+                    
+                </div>
+            </div>
+             <?php endforeach;?>
+            <div style="text-align: center; margin: 2%;">
+                <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Finalize</button>
+            </div>
                 
             </form>
         </article>

@@ -59,17 +59,23 @@ if($_SESSION["logged_in"] != "true"){
         <br><br>
         <br><br><br>
         <div class="row">
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+               
+            </div>
             <div class="col-md-4">
                 <br>
-                <h3>Profile Info</h3><br>
+                <h2>Profile Info</h2>
+                
+                 
                 <article class="left">
-
+                    <br><br><br>
                             <?php foreach($customers as $c) :?>
-                                First Name: <?php echo $c["username"];?>
+                                <h3>First Name:</h3> <h4><?php echo $c["username"];?></h4>
                                 <br><br>
-                                Last Name: <?php echo $c["firstName"];?> <?php echo $c["lastName"];?>
+                                <h3>Last Name:</h3> <h4><?php echo $c["firstName"];?> <?php echo $c["lastName"];?></h4>
                                 <br><br>
-                                Email: <?php echo $c["email"];?>
+                                <h3>Email:</h3> <h4><?php echo $c["email"];?></h4>
                                 <br><br>
                                 
                                 <br><br>
@@ -80,26 +86,25 @@ if($_SESSION["logged_in"] != "true"){
                 
             </div>
             <div class="col-md-4">
-                <br><br><br><br>
+                
                 <?php foreach($customers as $c) :?>
-                                
-                                Address: <?php echo $c["address"];?>
+                
+               <br> <form method="post" action="profileInfoUpdate.php">
+                    
+                    <button type="submit" value="Submit" class="btn btn-secondary">Update Info</button>
+                </form><br><br><br>
+                                <h3>Address:</h3> <h4><?php echo $c["address"];?></h4>
                                 <br><br>
-                                State: <?php echo $c["state"];?>
+                                <h3>State:</h3> <h4><?php echo $c["state"];?></h4>
                                 <br><br>
-                                City: <?php echo $c["city"];?>
+                                <h3>City:</h3> <h4><?php echo $c["city"];?></h4>
                                 <br><br>
                             <?php endforeach;?>
                 <br>
                 
             </div>
-            <div class="col-md-4">
-                <br><br><br><br><br><br><br>
-                <br>
-                <form method="post" action="profileInfoUpdate.php">
-                    
-                    <button type="submit" value="Submit" class="btn btn-secondary">Update Info</button>
-                </form>
+            <div class="col-md-1">
+                
             </div>
         </div>
     </div>
