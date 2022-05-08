@@ -39,7 +39,7 @@ session_start();
 
     
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-white p-4 text-start">
             <article>
            <h2>Item Details</h2>
@@ -89,21 +89,29 @@ session_start();
                             }
                         ?>">
                         <br><br>
-                        Item Name:
-                        <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
-                        <br><br>
-                        Price:
-                        <input type="float" name="price" value="<?php echo $c["price"];?>" readonly>
-                        <br><br>
-                        Quantity:
-                        <input type="number" name="qty" value="1" required>
-                        <br><br>
-                        Description:
-                        <input type="text" name="description" value="<?php echo $c["description"]?>" readonly>
-                        <br><br>
-                        Category:
-                        <input type="text" name="category" value="<?php echo $c["category"];?>" readonly>
-                        <br><br>
+                        <div class="card w-100">
+                            <div class="row g-0">
+                                <div class="col-md-4 text-center">
+                                    <img src="<?php echo $c["img"]?>" class="img-fluid rounded-start" style="max-height: 15rem" alt="...">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h5 class="card-title" name="name"><?php echo $c["name"]?></h5>
+                                        <p class="card-text" name="description"><?php echo $c["description"]?></p>
+                                        <p class="card-text" name="price"><medium class="text-muted">Price: $<?php echo $c["price"]?></medium></p>
+                                        <p class="card-text" name="qty">Quantity: <input class="text-muted"></input></p>
+                                        
+                                    </div>
+                                </div> 
+                                <div class="col-md-2 card-body">
+                                    <div>
+                                       
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                       
                         
                         
                       <?php } ?>
@@ -115,9 +123,9 @@ session_start();
         </article>
             </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             
-        </div>
+        </div> -->
       </div>
   </div>
 

@@ -29,7 +29,7 @@ session_start();
     <?php include("nav.html");?>
 
     <div class="container">
-    <br><br> <br><br>
+    <br><br> <br>
       <div class="row">
         <div class="col-md-6 left">
             <div class="bg-white p-4 text-start">
@@ -44,6 +44,7 @@ session_start();
         <div class="col-md-6">
             <article class="right">
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <br>
                 Username: <input type="text" name="username">
                 <br><br>
                 Password: <input type="password" name="password">
@@ -51,6 +52,7 @@ session_start();
                 
                 <button type="submit" value="Submit">Submit</button>
             </form>
+            <br>
             <button onclick="window.location.href='resetPassword.php'">
                 Forgot Password?
             </button>

@@ -62,7 +62,7 @@ session_start();
                                             <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $c["name"];?></h5>
-                                                <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
+                                                <h5 class="card-title"> <?php echo "$".$c["price"];?></h5>
                                                 <p class="card-text"><?php echo $c["description"];?></p>
                                                 <form action="productDetails.php" method="post">
                                                     <input type="hidden" name="productId" value="<?php echo $c["productId"];?>">

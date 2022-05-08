@@ -75,7 +75,7 @@ if($_SESSION["logged_in"] != "true"){
                 }
                 
                 ?>
-                <br><br><br><br><h3>Past Orders</h3>
+                <br><br><br><br><h2>Past Orders</h2>
                 <table width="800px">
                     <tr>
                         <th>Name</th>
@@ -99,6 +99,7 @@ if($_SESSION["logged_in"] != "true"){
             
         </div>
     </div>
+    <br><br>
     
     
     

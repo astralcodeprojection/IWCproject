@@ -37,8 +37,7 @@ if($_SESSION["logged_in"] != "true"){
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
     <div class="container">
-        <br><br>
-        <br><br><br>
+        <br>
         <div class="row">
             
             <div class="col-md-6 justify-content-sm-center">
@@ -63,7 +62,7 @@ if($_SESSION["logged_in"] != "true"){
             </div>
         </div>
     </div>
-    
+    <br><br>
     
     
 
