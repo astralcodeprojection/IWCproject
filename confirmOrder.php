@@ -10,8 +10,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cart - Sustain Jewelry Co.</title>
-    <meta name="description" content="View your cart, and checkout the items you've selected from Sustain Jewelry.">
+    <title>Confirm Order - Sustain Jewelry Co.</title>
+    <meta name="description" content="View your order, and checkout the items you've selected from Sustain Jewelry.">
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT1YS7DNDD"></script>
@@ -147,7 +147,7 @@ session_start();
             <article>
                 <form action="shipping.php" method="post">
                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
-                    <input type="hidden" name="items[]" value="<?php echo $total?>">
+                    <input type="hidden" name="items[]" value="<?php echo $item["name"]?>">
                     <input type="hidden" name="total" value="<?php echo $total?>">
                     <input type="hidden" name="qty" value="<?php echo $qty?>">
                     <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>

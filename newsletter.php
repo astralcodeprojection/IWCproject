@@ -60,7 +60,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Payment - Sustain Jewelry Co.</title>
+    <title>Newsletter - Sustain Jewelry Co.</title>
     <meta name="description" content="Payment for Sustain Jewelry Company">
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -83,7 +83,7 @@ session_start();
 
     <div class="container">
         <div class="row text-center">
-            <h2 class="display-3 fw-bold">Payment Method</h2>
+            <h2 class="display-3 fw-bold">Newsletter</h2>
             <div class="heading-line mb-1"></div>
         </div>
         <form action="finalizePayment.php" method="POST">

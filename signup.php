@@ -27,25 +27,41 @@ session_start();
 <body class="">
     <?php include("warningBanner.php");?>
     <?php include("nav.html");?>
-     <article class="left">
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                Email: <input type="email" name="email">
-                <br><br>
-                Username: <input type="text" name="username">
-                <br><br>
-                Password: <input type="password" name="password">
-                <br><br>
-                First Name: <input type="text" name="firstName">
-                <br><br>
-                Last Name: <input type="text" name="lastName">
-                <br><br>
-                Address: <input type="text" name="address">
-                <br><br>
-                State: <input type="text" name="state">
-                <br><br>
-                City: <input type="text" name="city">
-                <br><br>
-                <button type="submit" value="Submit">Submit</button>
+    <div class="container">
+        <div class="row text-center">
+            <h2 class="display-3 fw-bold">Create a Profile</h2>
+            <div class="heading-line mb-1"></div>
+        </div>
+        
+            
+            
+        </div>
+    </div>
+     <article class="container">
+    
+     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address"><br>
+                    <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"><br>
+                    <input name="password" type="password" class="form-control" placeholder="Password" aria-label="First name"><br>
+                    <input name="firstName" type="text" class="form-control" placeholder="First Name" aria-label="Card Name"><br>
+                    <input name="lastName" type="text" class="form-control" placeholder="Last Name" aria-label="First name"><br>
+                    <input name="address" type="text" class="form-control" placeholder="Address" aria-label="Card Name"><br>
+                    <input name="state" type="text" class="form-control" placeholder="State" aria-label="First name"><br>
+                    <input name="city" type="text" class="form-control" placeholder="City" aria-label="CVV">
+                </div>
+                <div class="col">
+                    
+                </div>
+            </div>
+            <div style="text-align: center; margin: 2%;">
+                <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Finalize</button>
+            </div>
+                
             </form>
         </article>
         <article>

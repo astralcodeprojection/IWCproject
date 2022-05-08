@@ -176,7 +176,7 @@ session_start();
                                 <p class="card-text"><?php echo $item["description"]?></p>
                                 <p class="card-text"><medium class="text-muted">Price: $<?php echo $item["price"]?></medium></p>
                                 <p class="card-text"><medium class="text-muted">Quantity: <?php echo $item["qty"]?></medium></p>
-                                <form style="" method="POST" action="confirmOrder.php">
+                                <form style="" method="POST" action="">
                                     <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
                                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
                                     <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">

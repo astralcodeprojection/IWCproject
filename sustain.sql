@@ -1,24 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 19, 2022 at 10:02 PM
--- Server version: 5.7.24
--- PHP Version: 7.2.19
+-- Host: localhost:8889
+-- Generation Time: May 05, 2022 at 11:35 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `sustain`
+-- Database: `qqehzapi_sustain`
 --
 
 -- --------------------------------------------------------
@@ -39,9 +32,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cartId`, `userId`, `productId`, `qty`) VALUES
-(5, 999999, 39, 3),
 (7, 1, 26, 4),
-(11, 6, 3, 1);
+(11, 6, 3, 1),
+(18, 999999, 56, 1);
 
 -- --------------------------------------------------------
 
@@ -54,6 +47,13 @@ CREATE TABLE `contact` (
   `msgtxt` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`messageId`, `msgtxt`) VALUES
+(1, '\r\n                Great site!');
+
 -- --------------------------------------------------------
 
 --
@@ -64,18 +64,21 @@ CREATE TABLE `orders` (
   `orderId` int(9) NOT NULL,
   `userId` int(9) NOT NULL,
   `productId` int(9) NOT NULL,
-  `name` varchar(250) NOT NULL,
+  `items` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `firstName` varchar(250) NOT NULL,
   `lastName` varchar(250) NOT NULL,
   `address` varchar(250) NOT NULL,
   `state` varchar(250) NOT NULL,
+  `zip` int(9) NOT NULL,
   `city` varchar(250) NOT NULL,
   `qty` int(20) NOT NULL,
   `total` decimal(10,2) NOT NULL,
   `newsletter` varchar(250) NOT NULL,
   `shipping` varchar(250) NOT NULL,
-  `payMethod` varchar(250) NOT NULL
+  `card` int(12) NOT NULL,
+  `cvc` int(9) NOT NULL,
+  `cardName` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -188,7 +191,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `username`, `email`, `password`, `firstName`, `lastName`, `address`, `state`, `city`) VALUES
-(6, 'jacob', 'jacob@jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob');
+(6, 'jacob', 'jacob@jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob', 'jacob'),
+(7, 'd', 'asd@gmail.com', 'd', 'afds', 'adsf', 'd', 'lhkj', 'adsf'),
+(9, 'sustainEmployment', 'na', 'sustainable', 'na', 'na', 'na', 'na', 'na');
 
 --
 -- Indexes for dumped tables
@@ -236,13 +241,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `messageId` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `messageId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -260,7 +265,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -271,8 +276,3 @@ ALTER TABLE `users`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cartproductId` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
