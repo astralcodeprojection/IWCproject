@@ -66,6 +66,7 @@ if($_SESSION["logged_in"] != "true"){
                     
                 </div>
                 <div class="col">
+                    <br><h2>Update information</h2><br>
                     <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" required value="<?php echo $c["email"];?>"><br>
                     <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required value="<?php echo $c["username"];?>"><br>
                     <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" required value="<?php echo $c["password"];?>" ><br>
@@ -82,7 +83,7 @@ if($_SESSION["logged_in"] != "true"){
             </div>
              <?php endforeach;?>
             <div style="text-align: center; margin: 2%;">
-                <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Finalize</button>
+                <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Update</button>
             </div>
                 
             </form>

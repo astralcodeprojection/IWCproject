@@ -32,7 +32,6 @@ session_start();
             
             $error = $success = $productId = $userId = $qty = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
-                $productId = $_POST["itemId"];
                 $userId = $_POST["userId"];
                 $productId = $_POST["productId"];
                 $qty = $_POST["qty"];

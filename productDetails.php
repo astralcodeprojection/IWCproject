@@ -43,6 +43,7 @@ session_start();
             <div class="bg-white p-4 text-start">
             <article>
            <h2>Item Details</h2>
+           
             <form method="POST" action="addToCart.php">
            
                
@@ -99,7 +100,8 @@ session_start();
                                         <h5 class="card-title" name="name"><?php echo $c["name"]?></h5>
                                         <p class="card-text" name="description"><?php echo $c["description"]?></p>
                                         <p class="card-text" name="price"><medium class="text-muted">Price: $<?php echo $c["price"]?></medium></p>
-                                        <p class="card-text" name="qty">Quantity: <input class="text-muted"></input></p>
+                                        Quantity: <input class="card-text" type="number" name="qty" required><br>
+                                         <input type="submit" value="Add To Bag">
                                         
                                     </div>
                                 </div> 
@@ -116,7 +118,7 @@ session_start();
                         
                       <?php } ?>
 
-                        <input type="submit" value="Add To Bag">
+                       
 
                       </form>
            
