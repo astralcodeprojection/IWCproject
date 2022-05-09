@@ -68,7 +68,7 @@ if($_SESSION["logged_in"] != "true"){
                 <div class="col">
                     <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" required value="<?php echo $c["email"];?>"><br>
                     <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required value="<?php echo $c["username"];?>"><br>
-                    <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" ><br>
+                    <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" required value="<?php echo $c["password"];?>" ><br>
                     <input name="firstName" type="text" class="form-control" placeholder="First Name" aria-label="First Name" required value="<?php echo $c["firstName"];?>"><br>
                     <input name="lastName" type="text" class="form-control" placeholder="Last Name" aria-label="Last name" required value="<?php echo $c["lastName"];?>"><br>
                     <input name="address" type="text" class="form-control" placeholder="Address" aria-label="Address" required value="<?php echo $c["address"];?>"><br>

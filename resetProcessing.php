@@ -60,9 +60,10 @@ session_start();
             ?>
             <form method="POST" action="passwordResetResults.php">
                 <?php foreach($customers as $c) :?>
+                <h2>Password Reset</h2><br>
                 New Password: <input type="password" name="password" required value="<?php echo $c["password"];?>">
                 <br><br>
-                 <input type="text" name="userId" value="<?php echo $c["userId"];?>">
+                 <input type="hidden" name="userId" value="<?php echo $c["userId"];?>">
                 <?php endforeach;?>
                 <input type="submit" value="Submit">
             </form>

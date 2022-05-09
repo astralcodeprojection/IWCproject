@@ -59,11 +59,15 @@ if($_SESSION["logged_in"] != "true"){
         <br><br>
         <br><br><br>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <br><br><br><br><br><br>
                
             </div>
-            <div class="col-md-4">
+            <div class="col-md-1 bg-info">
+                <br><br><br><br><br><br>
+               
+            </div>
+            <div class="col-md-5 bg-info">
                 <br>
                 <h2>Profile Info</h2>
                 
@@ -73,7 +77,7 @@ if($_SESSION["logged_in"] != "true"){
                             <?php foreach($customers as $c) :?>
                                 <h3>First Name:</h3> <h4><?php echo $c["username"];?></h4>
                                 <br><br>
-                                <h3>Last Name:</h3> <h4><?php echo $c["firstName"];?> <?php echo $c["lastName"];?></h4>
+                                <h3>Last Name:</h3> <h4><?php echo $c["firstName"];?> </h4>
                                 <br><br>
                                 <h3>Email:</h3> <h4><?php echo $c["email"];?></h4>
                                 <br><br>
@@ -85,7 +89,7 @@ if($_SESSION["logged_in"] != "true"){
                     </article>
                 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2 bg-info">
                 
                 <?php foreach($customers as $c) :?>
                 
@@ -103,7 +107,7 @@ if($_SESSION["logged_in"] != "true"){
                 <br>
                 
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
                 
             </div>
         </div>

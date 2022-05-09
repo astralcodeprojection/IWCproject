@@ -18,7 +18,7 @@
                 
                 ?>
                 
-             <script>window.location = "login.php";</script>
+             <script>window.location = "account.php";</script>
         <?php
             }             
         ?>
