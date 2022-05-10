@@ -30,13 +30,13 @@ session_start();
 
     <div class="container">
     <br><br> <br>
-      <div class="row">
+      <div class="row bg-info rounded-3">
         <div class="col-md-6 left">
-            <div class="bg-white p-4 text-start">
-            <h2 class="fw-light">
+            <div class="bg-info p-4 text-start">
+            <h2 class="bg-info">
                 Welcome to our profile page! <br><br></h2>
                 <p>If you do not have a profile at this time, please click below <br>to sign up to access this feature and get our newsletter!</p>
-                <button onclick="window.location.href='signup.php'">
+                <button class="btn btn-secondary" onclick="window.location.href='signup.php'">
                     Sign Up
                 </button>
             </div>
@@ -50,10 +50,10 @@ session_start();
                 Password: <input type="password" name="password">
                 <br><br>
                 
-                <button type="submit" value="Submit">Submit</button>
+                <button class="btn btn-secondary" type="submit" value="Submit">Submit</button>
             </form>
             <br>
-            <button onclick="window.location.href='resetPassword.php'">
+            <button class="btn btn-secondary" onclick="window.location.href='resetPassword.php'">
                 Forgot Password?
             </button>
 

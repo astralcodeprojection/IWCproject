@@ -32,11 +32,11 @@ session_start();
     <div class="row">
         <div class="col-md-2">
         </div>
-        <div class="col-md-9">
-            <h2>About Us</h2>
+        <div class="col-md-8">
+            
 
         </div>
-        <div class="col-md-1">
+        <div class="col-md-2">
             
         </div>
     </div>
@@ -44,17 +44,28 @@ session_start();
         <div class="col-md-2">
             
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8 bg-info rounded-3">
+            <h2>About Us</h2><br>
             <h4>Our mission is to create a positive impact in the world, by creating beautiful <br>
             jewelry that contains recycled non-hazardous materials.</h4><br>
             <p> Buying our jewelry will help you feel better about your choice at an affordable price. Choosing our
                 <br> brand will reduce the harmful effects on our world. Overall, you will feel safer and better 
-                <br>about your jewelry choice when choosing non-hazardous materials.  </p><br><br>
-        <div class="col-md-1">
+                <br>about your jewelry choice when choosing non-hazardous materials.  </p><br>
+        <div class="col-md-2">
             
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <br><br><br>
+
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
     
 
 </body>

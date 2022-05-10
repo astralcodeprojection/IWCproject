@@ -44,7 +44,8 @@ session_start();
                 <div class="col">
                     
                 </div>
-                <div class="col">
+                <div class="col bg-info rounded-3">
+                    <br>
                     <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address"><br>
                     <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"><br>
                     <input name="password" type="password" class="form-control" placeholder="Password" aria-label="First name"><br>
@@ -52,7 +53,7 @@ session_start();
                     <input name="lastName" type="text" class="form-control" placeholder="Last Name" aria-label="First name"><br>
                     <input name="address" type="text" class="form-control" placeholder="Address" aria-label="Card Name"><br>
                     <input name="state" type="text" class="form-control" placeholder="State" aria-label="First name"><br>
-                    <input name="city" type="text" class="form-control" placeholder="City" aria-label="CVV">
+                    <input name="city" type="text" class="form-control" placeholder="City" aria-label="CVV"><br>
                 </div>
                 <div class="col">
                     

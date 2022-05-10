@@ -120,7 +120,7 @@ session_start();
             <div class="col-md-4">
                 
                 <br><br>
-                <img src="img/aboutUs.png" class="col-md-12">
+                <img src="img/aboutUs.png" class="col-md-12 rounded-3">
                 <h2><br>About Sustain<br> Jewelry<br>Company</h2>
                 <a class="" href="aboutUs.php">
                     <button type="button"  class="btn btn-secondary">About Us</button>
@@ -130,7 +130,7 @@ session_start();
             <div class="col-md-2"></div>
             <div class="col-md-4">
                  <br><br>
-                <img src="img/ourMaterials.jpg" class="col-md-9">
+                <img src="img/ourMaterials.jpg" class="col-md-9 rounded-3">
                 <h2><br>View our <br>materials<br>information</h2>
                 
                 <a class="" href="materials.php"> 
