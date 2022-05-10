@@ -28,6 +28,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Sustain Jewelry Co. - Sustainable Fashion</title>
     <meta name="description" content="Sustain Jewelry Company provides sustainable jewelry using fine minerals and our sustainably sourced gemstones and pearls.">
     <link rel="stylesheet" href="assets/css/style.css">

@@ -16,6 +16,7 @@ if($_SESSION["admin_login"] != "true"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Admin - Sustain Jewelry Co.</title>
     <meta name="description" content="The Administrator Page for Sustain Jewelry">
     <link rel="stylesheet" href="assets/css/style.css">

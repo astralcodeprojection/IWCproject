@@ -9,6 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Cart - Sustain Jewelry Co.</title>
     <meta name="description" content="View your cart, and checkout the items you've selected from Sustain Jewelry.">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -187,6 +188,7 @@ session_start();
                                 </form>
                             </div>
                         </div> 
+
                         <div class="col-md-2 card-body">
                             <div>
                                 <form style="margin: 25%; width: 100%;" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -208,15 +210,40 @@ session_start();
                    
             <br><br><br>
 
+             <?php
+                $total = 0.00;
+                foreach($items as $item){
+                    $total += ($item["qty"] * $item["price"]);
+                }
+                $highestOrderSQL = "select MAX(siteOrderId) from orders"; //move this to when they actually place the order
+                $highestOrderStatement = $db->prepare($highestOrderSQL);
+                
+                if($highestOrderStatement->execute()){
+                    $highestOrders = $highestOrderStatement->fetchAll();
+                    $highestOrderStatement->closeCursor();
+                }
+                $newOrderId = 0;
+                foreach($highestOrders as $order){
+                    foreach($order as $max){
+                        $newOrderId = $max;
+                    } 
+                }
+                $newOrderId += 1;
+            ?>
+
+           
             <article>
                 <form action="confirmOrder.php" method="post">
+                    <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
                     <input type="hidden" name="productId" value="<?php echo $item["productId"]?>">
                     <input type="hidden" name="userId" value="<?php echo $item["userId"]?>">
                     <input type="hidden" name="qty" value="<?php echo $item["qty"]?>">
 
 
 
-                <button type="submit" style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 25%; font-size: 0.9em;">Checkout</button>
+                    <div style="text-align: center; margin: 2%;">
+                        <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Checkout</button>
+                    </div>
                 </form>
                 <br><br>
                 </div>

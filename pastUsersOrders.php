@@ -34,6 +34,7 @@ if($_SESSION["logged_in"] != "true"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Account - Sustain Jewelry Co.</title>
     <meta name="description" content="Create and manage your account for Sustain Jewelry, ethical and sustainable fashion">
     <link rel="stylesheet" href="assets/css/style.css">

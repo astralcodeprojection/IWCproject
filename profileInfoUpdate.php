@@ -36,6 +36,7 @@ if($_SESSION["logged_in"] != "true"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Profile Info - Sustain Jewelry Co.</title>
     <meta name="description" content="Profile Information for Sustain Jewelry Company">
     <link rel="stylesheet" href="assets/css/style.css">

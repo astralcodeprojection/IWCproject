@@ -7,8 +7,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FAQs - Sustain Jewelry Co.</title>
-    <meta name="description" content="Frequently Asked questions about Sustain Jewelry Company, the most affordable and sustainable jewelry online">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
+    <title>Web Policy - Sustain Jewelry Co.</title>
+    <meta name="description" content="About Sustain Jewelry Companies Web and Safety Policy.">
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FT1YS7DNDD"></script>

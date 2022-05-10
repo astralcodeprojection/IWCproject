@@ -7,6 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Successful Order - Sustain Jewelry Co.</title>
     <meta name="description" content="Successful Order">
     <link rel="stylesheet" href="assets/css/style.css">

@@ -7,6 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon-32x32.png">
     <title>Shipping - Sustain Jewelry Co.</title>
     <meta name="description" content="Shipping info for Sustain Jewelry Company">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -158,13 +159,15 @@ session_start();
                     <div class="form-check">
                         <input class="form-check-input bg-warning" type="radio" name="shipping" id="exampleRadios1" value="standard" checked>
                         <label class="form-check-label" for="exampleRadios1">
-                            Standard Shipping
+                            Standard Shipping (Free)
+                            <?php $totalWShipping= $total;?>
                         </label>
                         </div>
                         <div class="form-check">
                         <input class="form-check-input bg-warning" type="radio" name="shipping" id="exampleRadios2" value="express">
                         <label class="form-check-label" for="exampleRadios2">
-                            Express Shipping
+                            Express Shipping (7.99)
+                            <?php $totalWShipping= $total+7.99;?>
                         </label>
                         </div>
                     </div>
@@ -172,12 +175,11 @@ session_start();
             </div>
             <input type="hidden" name="userId" value="<?php echo $userId?>">
             <input type="hidden" name="items" value="<?php echo $allItems?>">
-            <input type="hidden" name="total" value="<?php echo $total?>">
+            <input type="hidden" name="total" value="<?php echo $totalWShipping?>">
             <input type="hidden" name="qty" value="<?php echo $qty?>">
             
          
 
-            <p style="text-align: center; font-size: 1.1rem; font-weight: bold;">Total: $<?php echo $total?></p>
             <div style="text-align: center; margin: 2%;">
                 <button style="padding: 1%; background-color: rgb(59, 110, 85); color: #FFFFFF; border: 0px; border-radius: 15px; font-size: 1.1rem;" type="submit">Proceed to Payment</button>
             </div>
